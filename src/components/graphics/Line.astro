@@ -1,0 +1,33 @@
+---
+interface Props {
+  top: number;
+  left?: number;
+  right?: number;
+  height: number;
+  rotation: number;
+  design: "primary" | "secondary";
+}
+
+const { top, left,right, rotation, design, height } = Astro.props;
+---
+
+<span
+  class="line"
+  style={{
+    top: top + "vh",
+    left: left + "vw",
+    right: right + "vw",
+    height: height + "vh",
+    transform: `rotate(${rotation}deg)`,
+    opacity: design === "primary" ? "1" : "0.3",
+  }}></span>
+
+<style>
+  .line {
+    position: absolute;
+    width: 0.2vh;
+    height: 1px;
+    background: #a1a1a1;
+    transform-origin: top;
+  }
+</style>
