@@ -1,0 +1,42 @@
+---
+import "@fontsource-variable/overpass-mono";
+import Graphics from "./graphics/Graphics.astro";
+---
+
+<section id="sponsors">
+  <h1>16.</h1>
+  <p>PREVIOUS SPONSORS</p>
+
+  <Graphics src="cubes" top={25} left={0} alt="cube" />
+  <Graphics src="cubes" top={40} right={0} alt="cube" />
+
+</section>
+
+<style>
+  #sponsors {
+    position: relative;
+    margin-top: 3rem;
+    height: 60vh;
+    padding: 0 10vw;
+    font-family: "Overpass Mono Variable", sans-serif;
+  }
+  #sponsors h1 {
+    font-size: 10em;
+    height: 0.8em;
+    font-weight: bold;
+    padding: 0;
+    margin: 0;
+    color: var(--text-background);
+  }
+  #sponsors h1::selection {
+    background: transparent;
+  }
+  #sponsors p {
+    color: var(--text-primary);
+    font-size: 1.5em;
+    margin-left: 1rem;
+  }
+  #sponsors p::selection {
+    background: transparent;
+  }
+</style>
