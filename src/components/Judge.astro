@@ -1,0 +1,131 @@
+---
+import Card from "./Card.astro";
+interface Judge {
+  name: string;
+  description: string;
+  src: string;
+}
+import Graphics from "./graphics/Graphics.astro";
+import "@fontsource-variable/overpass-mono";
+const data: Judge[] = [
+  {
+    name: "Kanishk Rawat",
+    description: "Web Developer",
+    src: "https://avatars.githubusercontent.com/u/56189243?v=4",
+  },
+  {
+    name: "Kanishk Rawat",
+    description: "Web Developer",
+    src: "https://avatars.githubusercontent.com/u/56189243?v=4",
+  },
+  {
+    name: "Kanishk Rawat",
+    description: "Web Developer",
+    src: "https://avatars.githubusercontent.com/u/56189243?v=4",
+  },
+  {
+    name: "Kanishk Rawat",
+    description: "Web Developer",
+    src: "https://avatars.githubusercontent.com/u/56189243?v=4",
+  },
+  {
+    name: "Kanishk Rawat",
+    description: "Web Developer",
+    src: "https://avatars.githubusercontent.com/u/56189243?v=4",
+  },
+  {
+    name: "Kanishk Rawat",
+    description: "Web Developer",
+    src: "https://avatars.githubusercontent.com/u/56189243?v=4",
+  },
+  {
+    name: "Kanishk Rawat",
+    description: "Web Developer",
+    src: "https://avatars.githubusercontent.com/u/56189243?v=4",
+  },
+  {
+    name: "Kanishk Rawat",
+    description: "Web Developer",
+    src: "https://avatars.githubusercontent.com/u/56189243?v=4",
+  },
+];
+---
+
+<section id="judge_mentors">
+  <h1>{data.length} .</h1>
+  <p>PREVIOUS JUDGES & MENTORS</p>
+  <p id="who">JUDGES</p>
+  <Graphics src="cubes" top={100} left={-15} alt="clouds" />
+  <Graphics src="cube" top={50} right={-10} alt="clouds" />
+  <Graphics src="cubes" top={150} right={-15} alt="clouds" />
+  <Graphics src="cube" top={200} left={-15} alt="clouds" />
+
+  <div id="judges">
+    {
+      data.map((judge) => (
+        <Card
+          name={judge.name}
+          description={judge.description}
+          src={judge.src}
+          alt={judge.name}
+        />
+      ))
+    }
+  </div>
+  <p id="who" style="margin-top: 5rem;">MENTORS</p>
+  <div id="judges">
+    {
+      data.map((judge) => (
+        <Card
+          name={judge.name}
+          description={judge.description}
+          src={judge.src}
+          alt={judge.name}
+        />
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  #judge_mentors {
+    position: relative;
+    min-height: 50vh;
+    margin: 0 10vw;
+    font-family: "Overpass Mono Variable", monospace;
+  }
+  #judge_mentors h1 {
+    font-size: 10em;
+    height: 0.8em;
+    font-weight: bold;
+    padding: 0;
+    margin: 0;
+    color: var(--text-background);
+  }
+  #judge_mentors h1::selection {
+    background: transparent;
+  }
+  #judge_mentors p {
+    color: var(--text-primary);
+    font-size: 1.5em;
+    margin-top: 2rem;
+    margin-left: 1rem;
+  }
+  #judge_mentors #who {
+    color: var(--text-primary);
+    float: right;
+    margin: 0;
+  }
+  #judge_mentors p::selection {
+    background: transparent;
+  }
+  #judges {
+    display: grid;
+    height: auto;
+    width: 100%;
+    padding: 2vh 0;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    grid-gap: 2rem;
+  }
+</style>

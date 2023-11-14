@@ -24,6 +24,7 @@ const { title } = Astro.props;
   :root {
     --text-primary: #fff;
     --text-secondary: #999;
+    --text-background: #292929;
     --primary-dark: #212121;
     --accent-primary: #03d9fe;
     --accent-dark: 49, 10, 101;
@@ -35,6 +36,9 @@ const { title } = Astro.props;
   /* add custom scrollbar */
   body::-webkit-scrollbar {
     width: 0rem;
+  }
+  body{
+    overflow-x: hidden;
   }
 
   code {
