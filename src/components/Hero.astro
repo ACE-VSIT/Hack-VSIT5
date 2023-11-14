@@ -1,0 +1,189 @@
+---
+import Graphics from "../components/graphics/Graphics.astro";
+import Line from "./graphics/Line.astro";
+import "@fontsource/russo-one";
+import "@fontsource-variable/overpass-mono";
+---
+
+<section id="hero">
+  <div id="logo__graphic">
+    <img src="/Hack.svg" alt="hack" />
+    <img src="/VSIT.svg" alt="vsit" />
+  </div>
+  <Graphics top={15} left={16} alt="cubes1" src="cube" />
+  <Graphics top={85} left={50} alt="cubes1" src="cubes" />
+  <Graphics top={75} left={86} alt="cubes1" src="cube" />
+
+  <Line top={19} right={0} height={200} rotation={60} design="primary" />
+  <Line top={0} right={0} height={200} rotation={60} design="secondary" />
+  <Line top={0} left={25} height={150} rotation={-60} design="secondary" />
+  <Line top={0} left={40} height={120} rotation={-60} design="primary" />
+
+  <div id="hero__info">
+    <div id="hero__info__text">
+      <h1>HackVSIT <span>5.0</span></h1>
+      <Line top={12} left={12} height={20} rotation={90} design="primary" />
+    </div>
+    <div id="hero__info__cta">
+      <a href="/#" class="btn">Register Now</a>
+    </div>
+  </div>
+
+  <table id="hero__info__table" cellspacing="0">
+    <tr>
+      <td>
+        <small>Date</small>
+        <p>16-17</p>
+      </td>
+      <td>
+        <small>Year</small><br />
+        <p>2024</p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <p style="font-size: 2rem;">HACKVSIT</p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <img src="/Ace-logo-large.svg" alt="ace-logo-large" />
+      </td>
+    </tr>
+  </table>
+  <style>
+    #logo__graphic {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    #logo__graphic img {
+      position: absolute;
+    }
+    #logo__graphic img:nth-child(1) {
+      top: 10vh;
+      left: 31vw;
+      z-index: 2;
+      height: 62vh;
+    }
+    #logo__graphic img:nth-child(2) {
+      top: 60vh;
+      left: 41vw;
+      height: 10.4vh;
+    }
+    #hero__info {
+      position: absolute;
+      top: 40vh;
+      left: 10vw;
+      width: 20vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 20vh;
+      font-family: "Russo One", sans-serif;
+      color: var(--text-primary);
+      letter-spacing: 0.2rem;
+      font-size: x-large;
+      font-weight: lighter;
+    }
+    #hero__info__text span {
+      color: var(--primary-dark);
+      -webkit-text-stroke-width: 2px;
+      -webkit-text-stroke-color: var(--text-primary);
+    }
+    #hero__info__cta {
+      display: flex;
+      margin-top: 1rem;
+      justify-content: center;
+      align-items: center;
+      background: rgb(112, 111, 111);
+    }
+    #hero__info__cta .btn {
+      position: absolute;
+      padding: 1rem 3rem;
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: medium;
+      font-weight: normal;
+      font-family: "Overpass Mono Variable", sans-serif;
+      transition: all 0.5s;
+      background-color: #03d9fe;
+    }
+    #hero__info__cta .btn::before {
+      position: absolute;
+      content: "";
+      transition: all 0.5s;
+      bottom: -15px;
+      height: 15px;
+      width: 100%;
+      left: 8px;
+      transform: skewX(45deg);
+      background-color: #319fe8;
+    }
+    #hero__info__cta .btn::after {
+      position: absolute;
+      content: "";
+      transition: all 0.5s;
+      right: -15px;
+      height: 100%;
+      width: 15px;
+      bottom: -8px;
+      transform: skewY(45deg);
+      background-color: #007acc;
+    }
+    #hero__info__cta .btn:active {
+      margin-left: 10px;
+      margin-top: 10px;
+    }
+    #hero__info__cta .btn:active::before {
+      bottom: -5px;
+      height: 5px;
+      left: 3px;
+    }
+    #hero__info__cta .btn:active::after {
+      right: -5px;
+      width: 5px;
+      bottom: -3px;
+    }
+    #hero__info__table {
+      position: absolute;
+      top: 55vh;
+      right: 5vw;
+      width: 25vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      font-family: "Overpass Mono Variable", sans-serif;
+      color: var(--text-primary);
+      letter-spacing: 0.2rem;
+    }
+    #hero__info__table td {
+      padding: 1rem 1.5rem;
+      border: 1px solid var(--text-primary);
+    }
+    #hero__info__table td p {
+      margin: 0;
+      margin-block-start: 0;
+      margin-block-end: 0;
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+    small {
+      font-size: 0.6rem;
+      margin: 0;
+    }
+    [alt="ace-logo-large"] {
+      margin: 0 0.5rem;
+    }
+    #hero__info__table td h1 {
+      color: var(--text-primary);
+      -webkit-text-stroke-width: 2px;
+      -webkit-text-stroke-color: var(--text-primary);
+    }
+  </style>
+</section>
