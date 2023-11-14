@@ -1,0 +1,195 @@
+---
+import "@fontsource-variable/overpass-mono";
+---
+
+<footer id="footer">
+  <div class="footer__container">
+    <div class="footer__upper">
+      <div class="footer__logo-section">
+        <div class="footer__logo">
+          <div id="hackvsit">HackVSIT <span>5.0</span></div>
+        </div>
+        <div>
+          Made with <span style="color: red;">&hearts;</span> by
+          <a href="#">ACE</a>
+        </div>
+        <div class="footer__cta">
+          <button>Sponsor Us</button>
+          <button><img src="/discord.svg" alt="discord" /></button>
+        </div>
+      </div>
+      <div class="footer__quicklinks">
+        <h1>Quick Links</h1>
+        <div>Themes</div>
+        <div>Prizes</div>
+        <div>About us</div>
+        <div>Our Team</div>
+        <div>FAQ</div>
+      </div>
+      <div class="footer__socials">
+        <h1>Socials</h1>
+        <div>
+          <img src="/socials/instagram.svg" alt="instagram" />
+          <img src="/socials/facebook.svg" alt="facebook" />
+          <img src="/socials/twitter.svg" alt="twitter" />
+          <img src="/socials/linkedin.svg" alt="linkedin" />
+          <img src="/socials/website.svg" alt="website" />
+        </div>
+      </div>
+      <div class="footer__register">
+        <h1>Register</h1>
+        <div>As a team</div>
+        <div>As an individual</div>
+      </div>
+    </div>
+    <div id="divider"></div>
+    <div class="footer__bottom">
+      Copyright 2024 HackVSIT 5.0. Made with <span style="color: red;"
+        >&hearts;</span
+      > by
+      <a href="#">ACE .</a>
+       Developed by <a href="#">Kanishk Rawat.</a>
+       Designed by <a href="#">Nidhi Jain.</a>
+    </div>
+  </div>
+</footer>
+
+<style>
+  #footer {
+    padding: 20px 0;
+    height: 30vh;
+    /* background: red; */
+    font-family: "Overpass Mono", monospace;
+    font-size: 12px;
+    color: var(--text-secondary);
+    margin: 0 5vw;
+  }
+  #divider {
+    width: 100%;
+    height: 5vh;
+    background: url("/footer-line.svg") no-repeat center;
+    background-size: cover;
+  }
+  .footer__container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  .footer__upper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 80%;
+  }
+  .footer__logo-section {
+    display: flex;
+    flex-direction: column;
+    height: 15vh;
+    width: 30%;
+  }
+  .footer__logo {
+    display: flex;
+    flex-direction: column;
+    font-family: "Russo One", sans-serif;
+    color: var(--text-primary);
+    letter-spacing: 0.2rem;
+    font-size: 5vh;
+    font-weight: bold;
+  }
+  .footer__logo span {
+    color: var(--primary-dark);
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: var(--text-primary);
+  }
+  .footer__logo-section:nth-child(1) {
+    display: flex;
+    font-size: 2vh;
+    margin: 0.5rem 0;
+    flex-direction: column;
+  }
+  .footer__logo-section:nth-child(1) a {
+    color: var(--text-primary);
+    text-decoration: none;
+  }
+  .footer__cta {
+    display: flex;
+    flex-direction: row;
+    margin-top: 1rem;
+  }
+  .footer__cta button {
+    padding: 0.5rem 2rem;
+    font-family: "Overpass Mono Variable", sans-serif;
+    font-size: 1rem;
+  }
+  .footer__cta button:nth-child(1) {
+    color: var(--primary-dark);
+    background: var(--accent-primary);
+    border: none;
+    margin-right: 1rem;
+  }
+  .footer__cta button img {
+    height: 4vh;
+  }
+  .footer__quicklinks {
+    display: flex;
+    height: 100%;
+    width: 20%;
+    flex-direction: column;
+  }
+  .footer__quicklinks h1 {
+    font-size: 2vh;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+  }
+  .footer__quicklinks div {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+  }
+  .footer__socials {
+    display: flex;
+    height: 100%;
+    width: 10vw;
+    flex-direction: column;
+  }
+  .footer__socials h1 {
+    font-size: 2vh;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+  }
+  .footer__socials div {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+  }
+  .footer__socials div img {
+    height: 3vh;
+    margin-bottom: 0.5rem;
+    width: 3vh;
+  }
+  .footer__register {
+    display: flex;
+    height: 100%;
+    width: 20%;
+    flex-direction: column;
+  }
+  .footer__register h1 {
+    font-size: 2vh;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+  }
+  .footer__register div {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+  }
+  .footer__bottom {
+    margin-top: 2rem;
+    font-size: 1rem;
+  }
+  .footer__bottom a {
+    color: var(--text-primary);
+    text-decoration: none;
+  }
+</style>
