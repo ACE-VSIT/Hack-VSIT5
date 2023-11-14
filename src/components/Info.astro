@@ -1,0 +1,63 @@
+---
+import "@fontsource-variable/overpass-mono";
+import Graphics from "./graphics/Graphics.astro";
+const data = [
+  `Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur alias
+      laudantium nam iure repudiandae error accusamus porro nisi laboriosam
+      distinctio voluptas et ipsam illo illum, expedita eum fugiat explicabo
+      maxime?`,
+  `Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur alias
+      laudantium nam iure repudiandae error accusamus porro nisi laboriosam
+      distinctio voluptas et ipsam illo illum, expedita eum fugiat explicabo
+      maxime?`,
+];
+---
+
+<section id="info">
+  <h1>24.</h1>
+  <p>HOURS</p>
+  <div id="info__para">
+    <div>{data[0]}</div>
+    <div>{data[1]}</div>
+  </div>
+  <Graphics src="cube" top={35} right={0} alt="cube" />
+</section>
+
+<style>
+  #info {
+    position: relative;
+    margin-top: 3rem;
+    height: 60vh;
+    padding: 0 10vw;
+    font-family: "Overpass Mono Variable", sans-serif;
+  }
+  #info h1 {
+    font-size: 10em;
+    height: 0.8em;
+    font-weight: bold;
+    padding: 0;
+    margin: 0;
+    color: var(--text-background);
+  }
+  #info h1::selection {
+    background: transparent;
+  }
+  #info p {
+    color: var(--text-primary);
+    font-size: 1.5em;
+    margin-left: 1rem;
+  }
+  #info p::selection {
+    background: transparent;
+  }
+  #info__para {
+    color: var(--text-primary);
+    font-size: 1.5em;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    display: flex;
+  }
+  #info__para *::selection {
+    background: var(--text-primary);
+  }
+</style>
