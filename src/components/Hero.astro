@@ -56,6 +56,9 @@ import "@fontsource-variable/overpass-mono";
 </section>
 
 <style>
+  #hero *::selection {
+    background: transparent;
+  }
   #logo__graphic {
     position: relative;
     width: 100%;
@@ -66,6 +69,9 @@ import "@fontsource-variable/overpass-mono";
   }
   #logo__graphic img {
     position: absolute;
+  }
+  #logo__graphic img::selection {
+    background: transparent;
   }
   #logo__graphic img:nth-child(1) {
     top: 10vh;
