@@ -1,0 +1,34 @@
+---
+interface Props {
+  top: number;
+  left: number;
+  alt:string;
+  src:"cube" | "cubes" 
+}
+
+const { top,left,alt,src } = Astro.props;
+---
+<div class="container" 
+  style={{
+    top: `${top}vh`,
+    left: `${left}vw`,
+  }}>
+<img src={`${src}.svg`} alt={alt} />
+</div>
+
+<style>
+  .container {
+    position: absolute;
+  }
+  .container::selection {
+    background: transparent;
+  }
+  .container img {
+    width: 100%;
+    height: 100%;
+  }
+  .container img::selection {
+    background: transparent;
+  }
+</style>
+
