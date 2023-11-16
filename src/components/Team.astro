@@ -1,86 +1,89 @@
 ---
-import Card from "./card/Card.astro";
-interface Judge {
+import Card from "./card/MembersCard.astro";
+interface TeamType {
   name: string;
-  description: string;
   src: string;
+  socials?: {
+    linkedin?: string;
+    instagram?: string;
+  };
 }
 import Graphics from "./graphics/Graphics.astro";
 import "@fontsource-variable/overpass-mono";
-const data: Judge[] = [
+const data: TeamType[] = [
   {
     name: "Kanishk Rawat",
-    description: "Web Developer",
     src: "https://avatars.githubusercontent.com/u/56189243?v=4",
+    socials: {
+      linkedin: "https://www.linkedin.com/in/siddharth-singh-1b1b1b1b/",
+    },
   },
   {
     name: "Kanishk Rawat",
-    description: "Web Developer",
     src: "https://avatars.githubusercontent.com/u/56189243?v=4",
+    socials: {
+      linkedin: "https://www.linkedin.com/in/siddharth-singh-1b1b1b1b/",
+    },
   },
   {
     name: "Kanishk Rawat",
-    description: "Web Developer",
     src: "https://avatars.githubusercontent.com/u/56189243?v=4",
+    socials: {
+      linkedin: "https://www.linkedin.com/in/siddharth-singh-1b1b1b1b/",
+    },
   },
   {
     name: "Kanishk Rawat",
-    description: "Web Developer",
     src: "https://avatars.githubusercontent.com/u/56189243?v=4",
+    socials: {
+      linkedin: "https://www.linkedin.com/in/siddharth-singh-1b1b1b1b/",
+    },
   },
   {
     name: "Kanishk Rawat",
-    description: "Web Developer",
     src: "https://avatars.githubusercontent.com/u/56189243?v=4",
+    socials: {
+      linkedin: "https://www.linkedin.com/in/siddharth-singh-1b1b1b1b/",
+    },
   },
   {
     name: "Kanishk Rawat",
-    description: "Web Developer",
     src: "https://avatars.githubusercontent.com/u/56189243?v=4",
+    socials: {
+      linkedin: "https://www.linkedin.com/in/siddharth-singh-1b1b1b1b/",
+    },
   },
   {
     name: "Kanishk Rawat",
-    description: "Web Developer",
     src: "https://avatars.githubusercontent.com/u/56189243?v=4",
+    socials: {
+      linkedin: "https://www.linkedin.com/in/siddharth-singh-1b1b1b1b/",
+    },
   },
   {
     name: "Kanishk Rawat",
-    description: "Web Developer",
     src: "https://avatars.githubusercontent.com/u/56189243?v=4",
+    socials: {
+      linkedin: "https://www.linkedin.com/in/siddharth-singh-1b1b1b1b/",
+    },
   },
 ];
 ---
 
 <section id="judge_mentors">
   <h1>{data.length} .</h1>
-  <p>PREVIOUS JUDGES & MENTORS</p>
-  <p id="who">JUDGES</p>
+  <p>OUR TEAM</p>
   <Graphics src="cubes" top={100} left={-15} alt="clouds" />
   <Graphics src="cube" top={50} right={-10} alt="clouds" />
-  <Graphics src="cubes" top={150} right={-15} alt="clouds" />
-  <Graphics src="cube" top={200} left={-15} alt="clouds" />
 
   <div id="judges">
     {
-      data.map((judge) => (
+      data.map((team) => (
         <Card
-          name={judge.name}
-          description={judge.description}
-          src={judge.src}
-          alt={judge.name}
-        />
-      ))
-    }
-  </div>
-  <p id="who" style="margin-top: 5rem;">MENTORS</p>
-  <div id="judges">
-    {
-      data.map((judge) => (
-        <Card
-          name={judge.name}
-          description={judge.description}
-          src={judge.src}
-          alt={judge.name}
+          name={team.name}
+          src={team.src}
+          alt={team.name}
+          socials={team.socials}
         />
       ))
     }
@@ -91,6 +94,7 @@ const data: Judge[] = [
   #judge_mentors {
     position: relative;
     min-height: 50vh;
+    height: auto;
     margin: 0 10vw;
     font-family: "Overpass Mono Variable", monospace;
   }
