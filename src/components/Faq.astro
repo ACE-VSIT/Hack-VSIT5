@@ -1,0 +1,109 @@
+---
+import "@fontsource-variable/overpass-mono";
+import "@fontsource/russo-one";
+const faqData = [
+  {
+    question: "What is the difference between a regular and a premium account?",
+    answer:
+      "A regular account is free and allows you to create and share your own lists. A premium account allows you to create and share your own lists, but also gives you access to premium lists created by other users. Premium lists are lists that are not free to access and require a premium account to view. Premium lists are usually more detailed and have more information than regular lists.",
+  },
+  {
+    question: "What is the difference between a regular and a premium account?",
+    answer:
+      "A regular account is free and allows you to create and share your own lists. A premium account allows you to create and share your own lists, but also gives you access to premium lists created by other users. Premium lists are lists that are not free to access and require a premium account to view. Premium lists are usually more detailed and have more information than regular lists.",
+  },
+  {
+    question: "What is the difference between a regular and a premium account?",
+    answer:
+      "A regular account is free and allows you to create and share your own lists. A premium account allows you to create and share your own lists, but also gives you access to premium lists created by other users. Premium lists are lists that are not free to access and require a premium account to view. Premium lists are usually more detailed and have more information than regular lists.",
+  },
+  {
+    question: "What is the difference between a regular and a premium account?",
+    answer:
+      "A regular account is free and allows you to create and share your own lists. A premium account allows you to create and share your own lists, but also gives you access to premium lists created by other users. Premium lists are lists that are not free to access and require a premium account to view. Premium lists are usually more detailed and have more information than regular lists.",
+  },
+  {
+    question: "What is the difference between a regular and a premium account?",
+    answer:
+      "A regular account is free and allows you to create and share your own lists. A premium account allows you to create and share your own lists, but also gives you access to premium lists created by other users. Premium lists are lists that are not free to access and require a premium account to view. Premium lists are usually more detailed and have more information than regular lists.",
+  },
+];
+---
+
+<section id="faq">
+  <h1>FAQ</h1>
+  <div class="faq__container">
+    {
+      faqData.map((faq) => (
+        <div class="faq__item">
+          <div class="faq__item__icon">
+            <img src="/add.svg" alt="FAQ Icon" />
+          </div>
+          <div class="faq__item__content" onclick="">
+            <h3 class="faq__question">{faq.question}</h3>
+            <p class="faq__answer">{faq.answer}</p>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</section>
+<style>
+  #faq {
+    min-height: 50vh;
+    height: auto;
+    padding: 5vh 10vw;
+  }
+  #faq h1 {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: normal;
+    letter-spacing: 0.12rem;
+    margin-bottom: 5vh;
+    color: var(--text-primary);
+    font-family: "Russo One", sans-serif;
+  }
+  .faq__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .faq__item {
+    width: 100%;
+    display: flex;
+    margin-bottom: 5vh;
+    gap: 2rem;
+    border: 1px solid var(--accent-primary);
+    padding: 2rem;
+  }
+  .faq__item__icon {
+    margin-top: 0.5rem;
+  }
+  .faq__question {
+    margin-bottom: 1vh;
+    color: var(--text-primary);
+    font-family: "Overpass Mono", monospace;
+  }
+  .faq__answer {
+    display: none;
+    color: var(--text-secondary);
+    font-family: "Overpass Mono", monospace;
+  }
+</style>
+<script>
+  const faqItems = document.querySelectorAll(".faq__item");
+  faqItems.forEach((item) => {
+    const faqItems = document.querySelectorAll(".faq__item");
+    faqItems.forEach((item) => {
+      item.addEventListener("click", () => {
+        const faqAnswer = item.querySelector(".faq__answer") as HTMLElement;
+        if (faqAnswer.style.display === "none") {
+          faqAnswer.style.display = "block";
+        } else {
+          faqAnswer.style.display = "none";
+        }
+      });
+    });
+  });
+</script>
