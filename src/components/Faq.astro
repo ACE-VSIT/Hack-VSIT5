@@ -1,6 +1,7 @@
 ---
 import "@fontsource-variable/overpass-mono";
 import "@fontsource/russo-one";
+import Graphics from "../components/graphics/Graphics.astro";
 const faqData = [
   {
     question: "What is the difference between a regular and a premium account?",
@@ -47,9 +48,14 @@ const faqData = [
       ))
     }
   </div>
+  <Graphics src="cubes" top={25} left={-10} alt="cubes" />
+  <Graphics src="cubes" top={50} right={-10} alt="cube" />
+  <Graphics src="cubes" top={75} left={-10} alt="cubes" />
+
 </section>
 <style>
   #faq {
+    position: relative;
     min-height: 50vh;
     height: auto;
     padding: 5vh 10vw;

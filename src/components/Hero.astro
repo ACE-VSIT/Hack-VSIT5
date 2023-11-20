@@ -7,17 +7,16 @@ import "@fontsource-variable/overpass-mono";
 
 <section id="hero">
   <div id="logo__graphic">
-    <img src="/Hack.svg" alt="hack" />
-    <img src="/VSIT.svg" alt="vsit" />
+    <img src="/hackVsit.svg" alt="hack" />
   </div>
   <Graphics top={15} left={16} alt="cubes1" src="cube" />
   <Graphics top={85} left={50} alt="cubes1" src="cubes" />
   <Graphics top={75} left={86} alt="cubes1" src="cube" />
 
-  <Line top={19} right={0} height={200} rotation={60} design="primary" />
+  <!-- <Line top={19} right={0} height={200} rotation={60} design="primary" />
   <Line top={0} right={0} height={200} rotation={60} design="secondary" />
   <Line top={0} left={25} height={150} rotation={-60} design="secondary" />
-  <Line top={0} left={40} height={120} rotation={-60} design="primary" />
+  <Line top={0} left={40} height={120} rotation={-60} design="primary" /> -->
 
   <div id="hero__info">
     <div id="hero__info__text">
@@ -60,6 +59,12 @@ import "@fontsource-variable/overpass-mono";
 </section>
 
 <style>
+  #hero {
+    background: url("/lines.svg") no-repeat ;
+    background-size:cover;
+    background-position: center;
+    width: 100vw;
+  }
   #hero *::selection {
     background: transparent;
   }
@@ -78,15 +83,10 @@ import "@fontsource-variable/overpass-mono";
     background: transparent;
   }
   #logo__graphic img:nth-child(1) {
-    top: 10vh;
-    left: 31vw;
+    top: 9vh;
+    left: 30vw;
     z-index: 2;
     height: 62vh;
-  }
-  #logo__graphic img:nth-child(2) {
-    top: 60vh;
-    left: 41vw;
-    height: 10.4vh;
   }
   #hero__info {
     position: absolute;
@@ -119,10 +119,11 @@ import "@fontsource-variable/overpass-mono";
   }
   #hero__info__cta .btn {
     position: absolute;
-    padding: 1.5vh 6vh;
-    color: var(--text-primary);
+    padding: 1.5vh 7vh;
+    width: 10vw;
+    color: var(--text-background);
     text-decoration: none;
-    font-size: medium;
+    font-size: 1.5vh;
     font-weight: bold;
     font-family: "Overpass Mono Variable", sans-serif;
     transition: all 0.5s;
