@@ -35,4 +35,9 @@ const { top, left, right, alt, src } = Astro.props;
   .container img::selection {
     background: transparent;
   }
+  @media screen and (max-width: 600px) {
+    .container {
+      display: none;
+    }
+  }
 </style>

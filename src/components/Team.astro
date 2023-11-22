@@ -71,7 +71,6 @@ const data: TeamType[] = [
 ---
 
 <section id="judge_mentors">
-  <h1>{data.length} .</h1>
   <p>OUR TEAM</p>
   <Graphics src="cubes" top={100} left={-15} alt="clouds" />
   <Graphics src="cube" top={50} right={-10} alt="clouds" />
@@ -131,5 +130,13 @@ const data: TeamType[] = [
     grid-template-columns: repeat(4, 1fr);
     justify-items: center;
     grid-gap: 2rem;
+  }
+  @media only screen and (max-width: 600px) {
+    #judge_mentors {
+      margin: 0 5vw;
+    }
+    #judges {
+      grid-template-columns: repeat(1, 1fr);
+    }
   }
 </style>

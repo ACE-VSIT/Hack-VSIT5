@@ -128,4 +128,13 @@ const data: Judge[] = [
     justify-items: center;
     grid-gap: 2rem;
   }
+  /* mobile view */
+  @media only screen and (max-width: 600px) {
+    #judge_mentors {
+      margin: 0 5vw;
+    }
+    #judges {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
 </style>

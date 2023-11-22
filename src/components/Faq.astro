@@ -61,7 +61,7 @@ const faqData = [
   }
   h3,
   h1 p {
-    cursor: pointer ;
+    cursor: pointer;
   }
   #faq h1 {
     text-align: center;
@@ -80,6 +80,7 @@ const faqData = [
   }
   .faq__item {
     width: 100%;
+    cursor: pointer;
     display: flex;
     margin-bottom: 5vh;
     gap: 2rem;
@@ -102,17 +103,16 @@ const faqData = [
 </style>
 <script>
   const faqItems = document.querySelectorAll(".faq__item");
+
   faqItems.forEach((item) => {
-    const faqItems = document.querySelectorAll(".faq__item");
-    faqItems.forEach((item) => {
-      item.addEventListener("click", () => {
-        const faqAnswer = item.querySelector(".faq__answer") as HTMLElement;
-        if (faqAnswer.style.display === "none") {
-          faqAnswer.style.display = "block";
-        } else {
-          faqAnswer.style.display = "none";
-        }
-      });
+    const faqAnswer = item.querySelector(".faq__answer") as HTMLElement;
+    faqAnswer.style.display = "none";
+    item.addEventListener("click", () => {
+      if (faqAnswer.style.display === "none") {
+        faqAnswer.style.display = "block";
+      } else {
+        faqAnswer.style.display = "none";
+      }
     });
   });
 </script>

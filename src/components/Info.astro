@@ -2,10 +2,7 @@
 import "@fontsource-variable/overpass-mono";
 import Graphics from "./graphics/Graphics.astro";
 const data = [
-  `Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur alias
-      laudantium nam iure repudiandae error accusamus porro nisi laboriosam
-      distinctio voluptas et ipsam illo illum, expedita eum fugiat explicabo
-      maxime?`,
+  `ACE - The Association of Computer Enthusiasts, presents the 5th edition of HackVSIT. We at ACE believe in encouraging the growing talent and by HackVSIT we bring together, people with different outlook and solutions for already existing problems using technology and design. For 24 hours, you will work together with your teams to envision and develop the technology of tomorrow for solving the problems of today.`,
   `Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur alias
       laudantium nam iure repudiandae error accusamus porro nisi laboriosam
       distinctio voluptas et ipsam illo illum, expedita eum fugiat explicabo
@@ -27,7 +24,8 @@ const data = [
   #info {
     position: relative;
     margin-top: 3rem;
-    height: 60vh;
+    min-height: 60vh;
+    height: auto;
     padding: 0 10vw;
     font-family: "Overpass Mono Variable", sans-serif;
   }
@@ -55,9 +53,19 @@ const data = [
     font-size: 1.5em;
     margin-top: 1rem;
     margin-left: 1rem;
+    gap: 1rem;
     display: flex;
   }
   #info__para *::selection {
     background: var(--text-primary);
+  }
+  /* media */
+  @media screen and (max-width: 600px) {
+    #info {
+      padding: 0 5vw;
+    }
+    #info__para{
+      flex-direction: column;
+    }
   }
 </style>

@@ -1,6 +1,5 @@
 ---
 import Graphics from "../components/graphics/Graphics.astro";
-import Line from "./graphics/Line.astro";
 import "@fontsource/russo-one";
 import "@fontsource-variable/overpass-mono";
 ---
@@ -15,7 +14,6 @@ import "@fontsource-variable/overpass-mono";
   <div id="hero__info">
     <div id="hero__info__text">
       <h1>HackVSIT <span>5.0</span></h1>
-      <Line top={12} left={13} height={20} rotation={90} design="primary" />
     </div>
     <div id="hero__info__cta">
       <a href="/#" class="btn">Register Now</a>
@@ -55,7 +53,7 @@ import "@fontsource-variable/overpass-mono";
 <style>
   #hero {
     background: url("/lines.svg");
-    background-size:cover;
+    background-size: cover;
     background-position: center;
     width: 100vw;
   }
@@ -87,7 +85,8 @@ import "@fontsource-variable/overpass-mono";
     position: absolute;
     top: 40vh;
     left: 10vw;
-    width: 20vw;
+    min-width: 20vw;
+    width: auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -100,6 +99,7 @@ import "@fontsource-variable/overpass-mono";
     font-weight: bold;
   }
   #hero__info__text span {
+    position: relative;
     color: var(--primary-dark);
     -webkit-text-stroke-width: 2px;
     -webkit-text-stroke-color: var(--text-primary);
@@ -107,6 +107,7 @@ import "@fontsource-variable/overpass-mono";
   #hero__info__cta {
     display: flex;
     margin-top: 1rem;
+    width: auto;
     justify-content: center;
     align-items: center;
     font-weight: bold;
@@ -115,7 +116,8 @@ import "@fontsource-variable/overpass-mono";
   #hero__info__cta .btn {
     position: absolute;
     padding: 1.5vh 7vh;
-    width: 10vw;
+    min-width: 10vw;
+    width: auto;
     color: var(--text-background);
     text-decoration: none;
     font-size: 1.5vh;
@@ -195,5 +197,58 @@ import "@fontsource-variable/overpass-mono";
     color: var(--text-primary);
     -webkit-text-stroke-width: 2px;
     -webkit-text-stroke-color: var(--text-primary);
+  }
+  /* mobile view */
+  @media only screen and (max-width: 600px) {
+    #hero {
+      background: url("/linesMobile.svg");
+      background-size: cover;
+      background-position: center;
+      width: 100vw;
+      height: 100vh;
+      overflow-y: hidden;
+    }
+    #hero__info {
+      top: 60vh;
+      width: 100%;
+      left: 0;
+    }
+    #logo__graphic img:first-child {
+      top: 10vh;
+      left: -10vw;
+      z-index: 2;
+      width: 120vw;
+    }
+
+    #hero__info__cta {
+    }
+    #hero__info__cta .btn {
+    }
+    #hero__info__cta .btn:hover::after {
+    }
+    #hero__info__table {
+      top: 55vh;
+      left: 0vw;
+      width: auto;
+      display: none;
+    }
+    #hero__info__table td {
+      padding: 0 1.5rem;
+      border: 1px solid var(--text-primary);
+    }
+    #hero__info__table td p {
+      margin: 0;
+      margin-block-start: 0;
+      margin-block-end: 0;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+    small {
+      font-size: 0.6rem;
+      margin: 0;
+    }
+    [alt="ace-logo-large"] {
+      margin: 0 0.5rem;
+    }
   }
 </style>

@@ -173,7 +173,6 @@ import "@fontsource-variable/overpass-mono";
   }
   .footer__socials div {
     display: flex;
-    flex-direction: row;
     gap: 1rem;
     flex-wrap: wrap;
     margin-bottom: 0.5rem;
@@ -206,5 +205,31 @@ import "@fontsource-variable/overpass-mono";
   .footer__bottom a {
     color: var(--text-primary);
     text-decoration: none;
+  }
+  /* mobile view */
+  @media screen and (max-width: 600px) {
+    .footer__register {
+      display: none;
+    }
+    .footer__quicklinks {
+      display: none;
+    }
+    .footer__upper {
+      flex-direction: column;
+    }
+    .footer__logo-section {
+      width: 100%;
+      height: auto;
+    }
+    .footer__socials {
+      width: 100%;
+    }
+    .footer__socials div {
+      flex-direction: row;
+    }
+    .footer__bottom{
+      font-size: 0.8rem;
+      line-height: 1.5rem;
+    }
   }
 </style>
