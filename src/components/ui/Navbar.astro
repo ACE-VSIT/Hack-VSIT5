@@ -27,11 +27,11 @@ import "@fontsource-variable/overpass-mono";
 
 <style>
   .header {
-    /* background: url(/navbar.svg); */
-    /* background-repeat: no-repeat; */
-    /* background-size: contain; */
-    /* background-position: center; */
-    height: 7vh;
+    background: url(/navbar.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    height: 5vw;
     color: var(--text-primary);
     padding: 2rem 0;
     position: absolute;
@@ -53,6 +53,7 @@ import "@fontsource-variable/overpass-mono";
   .header__menu {
     float: right;
     margin-right: 10vw;
+    margin-top: 1vh;
   }
   .header__menu *::selection {
     background: transparent;
@@ -100,6 +101,9 @@ import "@fontsource-variable/overpass-mono";
   @media screen and (max-width: 600px) {
     .header__menu{
       display: none;
+    }
+    .header {
+      background-image: none;
     }
   }
 </style>

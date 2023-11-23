@@ -203,6 +203,7 @@ import "@fontsource-variable/overpass-mono";
     #hero {
       background: url("/linesMobile.svg");
       background-size: cover;
+      background-repeat: no-repeat;
       background-position: center;
       width: 100vw;
       height: 100vh;
@@ -213,13 +214,15 @@ import "@fontsource-variable/overpass-mono";
       width: 100%;
       left: 0;
     }
+    #logo__graphic {
+      overflow-y: hidden;
+    }
     #logo__graphic img:first-child {
       top: 10vh;
-      left: -10vw;
+      left: 10vw;
       z-index: 2;
-      width: 120vw;
+      width: 90vw;
     }
-
     #hero__info__cta {
     }
     #hero__info__cta .btn {
