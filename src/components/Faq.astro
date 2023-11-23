@@ -92,6 +92,7 @@ const faqData = [
   }
   .faq__question {
     margin-bottom: 1vh;
+    font-size: 1.5rem;
     color: var(--text-primary);
     font-family: "Overpass Mono", monospace;
   }
@@ -99,6 +100,29 @@ const faqData = [
     display: none;
     color: var(--text-secondary);
     font-family: "Overpass Mono", monospace;
+  }
+  @media screen and (max-width: 768px) {
+    #faq {
+      padding: 5vh 5vw;
+    }
+    #faq h1 {
+      font-size: 2rem;
+    }
+    .faq__item {
+      align-items: flex-start;
+      padding: 1rem;
+      gap: 0.5rem;
+    }
+    .faq__item__icon img {
+      height: 1.5rem;
+      margin-top: 0.4rem;
+    }
+    .faq__question {
+      font-size: 1rem;
+    }
+    .faq__answer {
+      font-size: 0.8rem;
+    }
   }
 </style>
 <script>

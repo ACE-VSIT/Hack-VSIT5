@@ -30,4 +30,9 @@ const { top, left,right, rotation, design, height } = Astro.props;
     background: #a1a1a1;
     transform-origin: top;
   }
+  @media screen and (max-width: 768px) {
+    .line {
+      display: none;
+    }
+  }
 </style>
