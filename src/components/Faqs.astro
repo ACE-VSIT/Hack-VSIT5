@@ -2,6 +2,7 @@
 import "@fontsource-variable/overpass-mono";
 import "@fontsource/russo-one";
 import Graphics from "../components/graphics/Graphics.astro";
+import Line from "./graphics/Line.astro";
 const faqData = [
   {
     question: "What is a Hackathon?",
@@ -10,18 +11,16 @@ const faqData = [
   },
   {
     question: "How big can my team be?",
-    answer:
-      "The maximum team size allowed is 4.",
+    answer: "The maximum team size allowed is 4.",
   },
   {
     question: "Can I register individually?",
-    answer:
-      "Yes, you can register as a team of 1.",
+    answer: "Yes, you can register as a team of 1.",
   },
   {
     question: "Where?",
     answer:
-    "HackVSIT is at Vivekananda Institute of Professional Studies -Technical Campus AU- Block (Outer Ring Road), Pitampura, Delhi - 110034."
+      "HackVSIT is at Vivekananda Institute of Professional Studies -Technical Campus AU- Block (Outer Ring Road), Pitampura, Delhi - 110034.",
   },
   {
     question: "Will there be food arrangement?",
@@ -29,42 +28,56 @@ const faqData = [
       "Yes. हाँ. Sure. Sí. Absolutely. You will be provided with proper meals. Thanks to our sponsors.",
   },
   {
-    question:"How much does it cost?",
+    question: "How much does it cost?",
     answer:
       "Zero. Zip. Zilch. Nada. Nothing. Admission to HackVSIT is completely free, thanks to our sponsors.",
   },
   {
-    question:"What are the criteria of short listing the teams?",
-    answer:"The registered participants will be shortlisted on the basis of their brief overview of their project ideas."
+    question: "What are the criteria of short listing the teams?",
+    answer:
+      "The registered participants will be shortlisted on the basis of their brief overview of their project ideas.",
   },
   {
-    question:"What do I bring with me to the event?",
-    answer:"You are required to bring your school/college ID, laptops, phone, chargers. A pillow and sleeping bag may be useful as well."
+    question: "What do I bring with me to the event?",
+    answer:
+      "You are required to bring your school/college ID, laptops, phone, chargers. A pillow and sleeping bag may be useful as well.",
   },
   {
     question: "What is the eligibility criteria?",
     answer:
       "You must be a student from any University/College or Higher Secondary School.",
-  }
+  },
 ];
 ---
 
 <section id="faq">
-  <h1>FAQ</h1>
+  <h1>{faqData.length} .</h1>
+  <div class="header">
+    <p>FAQs</p>
+    <Line top={2} left={7} height={15} rotation={-90} design="primary" />
+  </div>
+
   <div class="faq__container">
-    {
-      faqData.map((faq) => (
-        <div class="faq__item">
-          <div class="faq__item__icon">
-            <img src="/add.svg" alt="FAQ Icon" />
-          </div>
+    <div class="faq__item">
+      {
+        faqData.slice(0, faqData.length / 2 + 1).map((faq) => (
           <div class="faq__item__content" onclick="">
             <h3 class="faq__question">{faq.question}</h3>
             <p class="faq__answer">{faq.answer}</p>
           </div>
-        </div>
-      ))
-    }
+        ))
+      }
+    </div>
+    <div class="faq__item">
+      {
+        faqData.slice(faqData.length / 2 + 1, faqData.length).map((faq) => (
+          <div class="faq__item__content" onclick="">
+            <h3 class="faq__question">{faq.question}</h3>
+            <p class="faq__answer">{faq.answer}</p>
+          </div>
+        ))
+      }
+    </div>
   </div>
   <Graphics src="cubes" top={25} left={-10} alt="cubes" />
   <Graphics src="cubes" top={50} right={-10} alt="cube" />
@@ -81,42 +94,54 @@ const faqData = [
   h1 p {
     cursor: pointer;
   }
+  .header {
+    position: relative;
+  }
   #faq h1 {
-    text-align: center;
-    font-size: 3rem;
-    font-weight: normal;
-    letter-spacing: 0.12rem;
-    margin-bottom: 5dvh;
+    font-size: 10em;
+    height: 0.8em;
+    font-weight: bold;
+    padding: 0;
+    margin: 0;
+    color: var(--text-background);
+  }
+  #faq h1::selection {
+    background: transparent;
+  }
+  .header > p {
     color: var(--text-primary);
-    font-family: "Russo One", sans-serif;
+    font-size: 2rem;
+    margin-left: 1rem;
+  }
+  #faq p::selection {
+    background: transparent;
   }
   .faq__container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    width: 80%;
+    margin-left: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
   }
   .faq__item {
     width: 100%;
     cursor: pointer;
     display: flex;
-    margin-bottom: 5dvh;
+    flex-direction: column;
     gap: 2rem;
-    border: 1px solid var(--accent-primary);
-    padding: 2rem;
-  }
-  .faq__item__icon {
-    margin-top: 0.5rem;
   }
   .faq__question {
     margin-bottom: 1dvh;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
+    line-height: 2rem;
     color: var(--text-primary);
     font-family: "Overpass Mono", monospace;
   }
   .faq__answer {
-    display: none;
     color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.5rem;
+    padding-right: 10%;
     font-family: "Overpass Mono", monospace;
   }
   @media screen and (max-width: 768px) {
@@ -126,10 +151,13 @@ const faqData = [
     #faq h1 {
       font-size: 2rem;
     }
-    .faq__item {
-      align-items: flex-start;
-      padding: 1rem;
-      gap: 0.5rem;
+    .faq__container {
+      width: 100%;
+      gap: 0;
+      grid-template-columns: repeat(1, 1fr);
+    }
+    .faq__item{
+        gap: 0;
     }
     .faq__item__icon img {
       height: 1.5rem;
@@ -143,18 +171,3 @@ const faqData = [
     }
   }
 </style>
-<script>
-  const faqItems = document.querySelectorAll(".faq__item");
-
-  faqItems.forEach((item) => {
-    const faqAnswer = item.querySelector(".faq__answer") as HTMLElement;
-    faqAnswer.style.display = "none";
-    item.addEventListener("click", () => {
-      if (faqAnswer.style.display === "none") {
-        faqAnswer.style.display = "block";
-      } else {
-        faqAnswer.style.display = "none";
-      }
-    });
-  });
-</script>
