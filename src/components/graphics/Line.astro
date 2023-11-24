@@ -1,6 +1,6 @@
 ---
 interface Props {
-  top: number;
+  top?: number;
   left?: number;
   right?: number;
   height: number;
@@ -14,10 +14,10 @@ const { top, left,right, rotation, design, height } = Astro.props;
 <span
   class="line"
   style={{
-    top: top + "vh",
-    left: left + "vw",
-    right: right + "vw",
-    height: height + "vh",
+    top: top + "dvh",
+    left: left + "dvw",
+    right: right + "dvw",
+    height: height + "dvh",
     transform: `rotate(${rotation}deg)`,
     opacity: design === "primary" ? "1" : "0.3",
   }}></span>
@@ -25,7 +25,7 @@ const { top, left,right, rotation, design, height } = Astro.props;
 <style>
   .line {
     position: absolute;
-    width: 0.2vh;
+    width: 0.2dvh;
     height: 1px;
     background: #a1a1a1;
     transform-origin: top;
