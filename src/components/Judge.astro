@@ -7,62 +7,137 @@ interface Judge {
 }
 import Graphics from "./graphics/Graphics.astro";
 import "@fontsource-variable/overpass-mono";
-const data: Judge[] = [
+import Line from "./graphics/Line.astro";
+const Judge_data: Judge[] = [
   {
-    name: "Kanishk Rawat",
-    description: "Web Developer",
-    src: "https://avatars.githubusercontent.com/u/56189243?v=4",
+    name: "Dr. Dheeraj Malhotra",
+    description: "ASSOCIATE PROFESSOR AT VIPS",
+    src: "/judge/dheeraj4.0.jpg",
   },
   {
-    name: "Kanishk Rawat",
-    description: "Web Developer",
-    src: "https://avatars.githubusercontent.com/u/56189243?v=4",
+    name: "Dr. Pawan Whig",
+    description: "IEEE SENIOR MEMBER",
+    src: "/judge/pawan4.0.png",
   },
   {
-    name: "Kanishk Rawat",
-    description: "Web Developer",
-    src: "https://avatars.githubusercontent.com/u/56189243?v=4",
+    name: "Srijit S. Madhavan",
+    description: "FRONTEND LEAD AT BLUE SKY ANALYTICS",
+    src: "/judge/srijit4.0.jpg",
   },
   {
-    name: "Kanishk Rawat",
-    description: "Web Developer",
-    src: "https://avatars.githubusercontent.com/u/56189243?v=4",
+    name: "Pawan Singhla",
+    description: "SDE-1 AT ZUNPULSE",
+    src: "/judge/pawansinghla4.0.jpg",
   },
   {
-    name: "Kanishk Rawat",
-    description: "Web Developer",
-    src: "https://avatars.githubusercontent.com/u/56189243?v=4",
+    name: "Aditya Dhawan",
+    description: "SDE3 AT TESCO",
+    src: "/judge/AdityaDhawan.jfif",
   },
   {
-    name: "Kanishk Rawat",
-    description: "Web Developer",
-    src: "https://avatars.githubusercontent.com/u/56189243?v=4",
+    name: "Shitiz Aggarwal",
+    description: "CO-FOUNDER AT CODE SAUCE",
+    src: "/judge/shitiz4.0.jpg",
   },
   {
-    name: "Kanishk Rawat",
-    description: "Web Developer",
-    src: "https://avatars.githubusercontent.com/u/56189243?v=4",
+    name: "Karuna Tata",
+    description: "COACH AT MLH",
+    src: "/judge/karuna4.0.jpg",
   },
   {
-    name: "Kanishk Rawat",
-    description: "Web Developer",
-    src: "https://avatars.githubusercontent.com/u/56189243?v=4",
+    name: "Anshika Gupta",
+    description: "EX JR. SOFTWARE ENGINEER AT MYKARE",
+    src: "/judge/Anshika4.0.jpg",
+  },
+];
+const Mentor_data: Judge[] = [
+  {
+    name: "Anmol Jain",
+    description: "DESIGN TEAM LEAD & FOUNDING MEMBER AT SURAASA",
+    src: "/judge/Anmol4.0.jpg",
+  },
+  {
+    name: "Gaurav Gogia",
+    description: "SECURITY R&D AT TENABLE",
+    src: "/judge/gaurav4.0.jpg",
+  },
+  {
+    name: "Mihir Bagchi",
+    description: "SDE-1 AT VAHAK",
+    src: "/judge/mihir4.0.jpg",
+  },
+  {
+    name: "Ansh Saini",
+    description: "FOUNDING MEMBER AT SURASA",
+    src: "/judge/ansh4.0.jpg",
+  },
+  {
+    name: "Sameer Kumar",
+    description: "PRODUCT ENGINEER AT SYLVA",
+    src: "/judge/Sameer4.0.jpg",
+  },
+  {
+    name: "Preetam Yadav",
+    description: "SDE AT LES TRANSFORMATION",
+    src: "/judge/preetam4.0.jpg",
+  },
+  {
+    name: "Geetansh Monga",
+    description: "FLUTTER DEVELOPER AT SYNQ.",
+    src: "/judge/geetansh4.0.jpg",
+  },
+  {
+    name: "Dhirendra Chaudhary",
+    description: "DATA SCIENTIST AT IHX PRIVATE LIMITED",
+    src: "/judge/dhirendra4.0.jpg",
+  },
+  {
+    name: "Jai Tomar",
+    description: "MOTION GRAPHIC DESIGNER AT PINEAPPPLE",
+    src: "/judge/jai4.0.jpg",
+  },
+  {
+    name: "Lakshay Kapoor",
+    description: "FOUNDING MEMBER AT SURASA",
+    src: "/judge/lakshay4.0.jpg",
+  },
+  {
+    name: "Prateek Batra",
+    description: "ANDROID ENGINEER AT GOJEK",
+    src: "/judge/prateek4.0.jpg",
+  },
+  {
+    name: "Amitesh Tiwari",
+    description: "SOFTWARE ENGINEER AT UPSTOX",
+    src: "/judge/amitesh4.0.jpeg",
+  },
+  {
+    name: "Shreyansh Jain",
+    description: "TECHNOLOGY LEAD AT SURASA",
+    src: "/judge/shreyans4.0.jpg",
+  },
+  {
+    name: "Chirag Jain",
+    description: "SOLUTIONS ARCHITECT AT SURASA",
+    src: "/judge/chirag4.0.avif",
   },
 ];
 ---
 
 <section id="judge_mentors">
-  <h1>{data.length} .</h1>
+  <h1>{Judge_data.length + Mentor_data.length}.</h1>
   <p>PREVIOUS JUDGES & MENTORS</p>
-  <p id="who">JUDGES</p>
+  <div class="header">
+    <p class="who">JUDGES</p>
+    <Line top={1.5} right={15} height={15} rotation={-90} design="primary" />
+  </div>
   <Graphics src="cubes" top={100} left={-15} alt="clouds" />
   <Graphics src="cube" top={50} right={-10} alt="clouds" />
   <Graphics src="cubes" top={150} right={-15} alt="clouds" />
   <Graphics src="cube" top={200} left={-15} alt="clouds" />
-
-  <div id="judges">
+  <div class="groups">
     {
-      data.map((judge) => (
+      Judge_data.map((judge) => (
         <Card
           name={judge.name}
           description={judge.description}
@@ -72,10 +147,13 @@ const data: Judge[] = [
       ))
     }
   </div>
-  <p id="who" style="margin-top: 5rem;">MENTORS</p>
-  <div id="judges">
+  <div class="header" style="margin-top: 5rem;">
+    <p class="who">MENTORS</p>
+    <Line top={1.5} right={17} height={15} rotation={-90} design="primary" />
+  </div>
+  <div class="groups">
     {
-      data.map((judge) => (
+      Mentor_data.map((judge) => (
         <Card
           name={judge.name}
           description={judge.description}
@@ -90,9 +168,12 @@ const data: Judge[] = [
 <style>
   #judge_mentors {
     position: relative;
-    min-height: 50vh;
-    margin: 0 10vw;
+    min-height: 50dvh;
+    margin: 0 10dvw;
     font-family: "Overpass Mono Variable", monospace;
+  }
+  .header{
+    position: relative;
   }
   #judge_mentors h1 {
     font-size: 10em;
@@ -111,7 +192,7 @@ const data: Judge[] = [
     margin-top: 2rem;
     margin-left: 1rem;
   }
-  #judge_mentors #who {
+  #judge_mentors .who {
     color: var(--text-primary);
     float: right;
     margin: 0;
@@ -119,11 +200,11 @@ const data: Judge[] = [
   #judge_mentors p::selection {
     background: transparent;
   }
-  #judges {
+  .groups {
     display: grid;
     height: auto;
     width: 100%;
-    padding: 2vh 0;
+    padding: 2dvh 0;
     grid-template-columns: repeat(4, 1fr);
     justify-items: center;
     grid-gap: 2rem;
@@ -131,12 +212,15 @@ const data: Judge[] = [
   /* mobile view */
   @media only screen and (max-width: 600px) {
     #judge_mentors {
-      margin: 0 5vw;
+      margin: 0 5dvw;
     }
     #judge_mentors h1 {
       font-size: 6rem;
     }
-    #judges {
+    #judge_mentors .who {
+      margin-right: 2rem;
+    }
+    .groups {
       grid-template-columns: repeat(1, 1fr);
     }
   }
