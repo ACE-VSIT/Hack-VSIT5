@@ -4,14 +4,11 @@ import Graphics from "./graphics/Graphics.astro";
 import Line from "./graphics/Line.astro";
 const data = [
   `ACE - The Association of Computer Enthusiasts, presents the 5th edition of HackVSIT. We at ACE believe in encouraging the growing talent and by HackVSIT we bring together, people with different outlook and solutions for already existing problems using technology and design. For 24 hours, you will work together with your teams to envision and develop the technology of tomorrow for solving the problems of today.`,
-  `Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur alias
-      laudantium nam iure repudiandae error accusamus porro nisi laboriosam
-      distinctio voluptas et ipsam illo illum, expedita eum fugiat explicabo
-      maxime?`,
+  `This year we come with unparalleled enthusiasm, ready to unveil a series of exciting surprises. With the 5th edition, we are taking the hackathon experience to new heights, offering participants an unforgettable journey of learning, creativity and collaboration. Join us in breaking through the boundaries of innovation and setting the stage for a truly influential event.`,
 ];
 ---
 
-<section id="info">
+<section id="about-us">
   <h1>24.</h1>
   <div class="header">
     <p>HOURS</p>
@@ -25,7 +22,7 @@ const data = [
 </section>
 
 <style>
-  #info {
+  #about-us {
     position: relative;
     margin-top: 3rem;
     min-height: 40dvh;
@@ -36,7 +33,7 @@ const data = [
   .header {
     position: relative;
   }
-  #info h1 {
+  #about-us h1 {
     font-size: 10em;
     height: 0.8em;
     font-weight: bold;
@@ -44,7 +41,7 @@ const data = [
     margin: 0;
     color: var(--text-background);
   }
-  #info h1::selection {
+  #about-us h1::selection {
     background: transparent;
   }
   .header > p {
@@ -52,7 +49,7 @@ const data = [
     color: var(--text-primary);
     margin-left: 1rem;
   }
-  #info p::selection {
+  #about-us p::selection {
     background: transparent;
   }
   #info__para {
@@ -69,10 +66,10 @@ const data = [
   }
   /* media */
   @media screen and (max-width: 600px) {
-    #info {
+    #about-us {
       padding: 0 5dvw;
     }
-    #info h1 {
+    #about-us h1 {
       font-size: 6rem;
     }
     #info__para {

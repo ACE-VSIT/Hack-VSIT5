@@ -22,18 +22,31 @@ import "@fontsource-variable/overpass-mono";
         <h1>Quick Links</h1>
         <div>Themes</div>
         <div>Prizes</div>
-        <div>About us</div>
-        <div>Our Team</div>
+        <a href="#about-us">
+          <div>About us</div>
+        </a>
+        <a href="#faq">
         <div>FAQ</div>
+      </a>
       </div>
       <div class="footer__socials">
         <h1>Socials</h1>
         <div>
-          <img src="/socials/instagram.svg" alt="instagram" />
-          <img src="/socials/facebook.svg" alt="facebook" />
-          <img src="/socials/twitter.svg" alt="twitter" />
-          <img src="/socials/linkedin.svg" alt="linkedin" />
-          <img src="/socials/website.svg" alt="website" />
+          <a href="https://www.instagram.com/acevips/">
+            <img src="/socials/instagram.svg" alt="instagram" />
+          </a>
+          <a href="https://www.facebook.com/vipsace/">
+            <img src="/socials/facebook.svg" alt="facebook" />
+          </a>
+          <a href="https://twitter.com/VIPS_ACE">
+            <img src="/socials/twitter.svg" alt="twitter" />
+          </a>
+          <a href="https://www.linkedin.com/company/vipsace/mycompany/">
+            <img src="/socials/linkedin.svg" alt="linkedin" />
+          </a>
+          <a href="https://vipsace.org/">
+            <img src="/socials/website.svg" alt="website" />
+          </a>
         </div>
       </div>
       <div class="footer__register">
@@ -159,6 +172,10 @@ import "@fontsource-variable/overpass-mono";
   .footer__quicklinks div {
     margin-bottom: 0.5rem;
     font-size: 1rem;
+  }
+  .footer__quicklinks a {
+    color: var(--text-secondary);
+    text-decoration: none;
   }
   .footer__socials {
     display: flex;
