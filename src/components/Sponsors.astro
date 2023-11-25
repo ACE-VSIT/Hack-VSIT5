@@ -3,7 +3,7 @@ import "@fontsource-variable/overpass-mono";
 import Graphics from "./graphics/Graphics.astro";
 import Line from "./graphics/Line.astro";
 type Company = {
-  level: "Event-Partner" | "Premium-Sponsor" | "Partner-Sponsor";
+  level: "Event-Partner" | "Premium-Sponsor" | "Partner-Sponsor"|"Media-Partners"|"Sustainability-Partner"|"Certificate-Partner";
   data: {
     logo: string;
     name: string;
@@ -16,56 +16,111 @@ const companies: Company[] = [
     data: [
       {
         name: "MLH",
-        logo: "/sponsors/mlh.png",
-        link: "https://mlh.io/",
-      },
-    ],
+        logo: "sponsors/mlh-logo.png",
+        link: "http://mlh.io/"
+      }
+    ]
   },
   {
     level: "Premium-Sponsor",
     data: [
       {
         name: "Devfolio",
-        logo: "/sponsors/devfolio.png",
-        link: "https://devfolio.co/",
+        logo: "sponsors/devfolio.png",
+        link: "https://devfolio.co"
       },
       {
         name: "Digital Ocean",
-        logo: "/sponsors/digitalOcean.png",
-        link: "https://www.digitalocean.com/",
+        logo: "sponsors/DO.png",
+        link: "https://www.digitalocean.com/"
       },
       {
         name: "Polygon",
-        logo: "/sponsors/Polygon.png",
-        link: "https://polygon.technology/",
-      },
-    ],
+        logo: "sponsors/polygon.png",
+        link: "https://polygon.technology/"
+      }
+    ]
   },
   {
     level: "Partner-Sponsor",
     data: [
       {
+        name: "rabear.io",
+        logo: "sponsors/rabeario.png",
+        link: "https://rabear.io/"
+      },
+      {
+        name: "Filecoin",
+        logo: "sponsors/filecoin.png",
+        link: "https://filecoin.io/"
+      },
+      {
+        name: "Solana",
+        logo: "sponsors/solana.png",
+        link: "https://solana.com/"
+      },
+      {
+        name: "Replit",
+        logo: "sponsors/replit-logo.png",
+        link: "https://replit.com/"
+      },
+      {
+        name: "Clerky",
+        logo: "sponsors/clerky.png",
+        link: "https:///"
+      },
+      {
+        name: "Taskade",
+        logo: "sponsors/taskade.png",
+        link: "https://www.taskade.com/"
+      },
+      {
+        name: "echo3D",
+        logo: "sponsors/echo3D.webp",
+        link: "https://www.echo3d.co/"
+      },
+      {
+        name: "Wolfram",
+        logo: "sponsors/wolfram-language.png",
+        link: "https://www.wolfram.com/"
+      },
+      {
         name: "Bobble AI",
-        logo: "/sponsors/bobble.png",
-        link: "https://bobble.ai/",
-      },
-      {
-        name: "echo3d",
-        logo: "/sponsors/echo3d.png",
-        link: "https://echo3d.co/",
-      },
-      {
-        name: "Bobble AI",
-        logo: "/sponsors/bobble.png",
-        link: "https://bobble.ai/",
-      },
-      {
-        name: "echo3d",
-        logo: "/sponsors/echo3d.png",
-        link: "https://echo3d.co/",
-      },
-    ],
+        logo: "sponsors/bobbleai.png",
+        link: "https://www.bobble.ai/en/home"
+      }
+    ]
   },
+  {
+    level: "Sustainability-Partner",
+    data: [
+      {
+        name: "Earth Hacks",
+        logo: "sponsors/earth_hacks.png",
+        link: "https://earthhacks.io/"
+      }
+    ]
+  },
+  {
+    level: "Certificate-Partner",
+    data: [
+      {
+        name: "Certopus",
+        logo: "sponsors/certopus.svg",
+        link: "https://certopus.com/"
+      }
+    ]
+  },
+  {
+    level: "Media-Partners",
+    data: [
+      {
+        name: "NoticeBard",
+        logo: "sponsors/noticebard.png",
+        link: "https://www.noticebard.com/"
+      }
+    ]
+  }
 ];
 ---
 
@@ -80,7 +135,7 @@ const companies: Company[] = [
       companies.map((company) => {
         return (
           <div class="company">
-            <p class="tier">{company.level}</p>
+            <p class="tier">{company.level.split("-").join(" ")}</p>
             <div class="company-logo">
               {company.data.map((item) => {
                 return (
@@ -121,7 +176,7 @@ const companies: Company[] = [
       height: 15vh;
       width: 25vw;
     }
-    .partner-sponsor {
+    .partner-sponsor,.sustainability-partner,.certificate-partner,.media-partners {
       height: 10vh;
       width: 10vw;
     }
@@ -159,6 +214,7 @@ const companies: Company[] = [
     }
     .company-logo {
       display: flex;
+      flex-wrap:wrap;
       flex-direction: row;
       align-items: center;
       gap: 3rem;
@@ -197,7 +253,7 @@ const companies: Company[] = [
         height: auto;
         width: 35vw;
       }
-      .partner-sponsor {
+      .partner-sponsor,.sustainability-partner,.certificate-partner,.media-partners {
         height: auto;
         width: 30vw;
       }
