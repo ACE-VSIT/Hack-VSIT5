@@ -1,20 +1,26 @@
 ---
 import "@fontsource-variable/overpass-mono";
+import { getImage } from "astro:assets";
+import navbar from "../../assets/navbar.svg";
+const optimizedBackground = await getImage({ src: navbar, format: "svg" });
 ---
 
-<header class="header">
+<header
+  class="header"
+  style={`background-image: url(${optimizedBackground.src});`}
+>
   <div class="container">
     <div class="logos">
-    <div class="header__logo">
-      <a href="#">
-        <img src="/NewLogo.svg" alt="logo" />
-      </a>
-    </div>
-    <div class="header__menuIcon">
-      <a href="#">
-        <img src="/hamburgermenu.svg" alt="logo" />
-      </a>
-    </div>
+      <div class="header__logo">
+        <a href="#">
+          <img src="/NewLogo.svg" alt="logo" />
+        </a>
+      </div>
+      <div class="header__menuIcon">
+        <a href="#">
+          <img src="/hamburgermenu.svg" alt="logo" />
+        </a>
+      </div>
     </div>
     <div class="header__menu">
       <ul>
@@ -30,7 +36,6 @@ import "@fontsource-variable/overpass-mono";
 
 <style>
   .header {
-    background: url(/navbar.svg);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
@@ -111,7 +116,7 @@ import "@fontsource-variable/overpass-mono";
       display: none;
     }
     .header {
-      background-image: none;
+      background-image: none !important;
       padding: 0;
       display: flex;
       justify-content: space-between;
@@ -127,13 +132,12 @@ import "@fontsource-variable/overpass-mono";
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background:var(--primary-dark);
+      background: var(--primary-dark);
       width: 100%;
       margin: 1rem;
       padding: 0 1rem;
       border: 1px solid var(--text-primary);
       border-radius: 10px;
-
     }
     .header__logo {
       margin-left: 0;
