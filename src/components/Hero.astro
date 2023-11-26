@@ -2,6 +2,7 @@
 import Graphics from "../components/graphics/Graphics.astro";
 import "@fontsource/russo-one";
 import "@fontsource-variable/overpass-mono";
+import "@fontsource-variable/nunito-sans";
 import { Image, getImage } from "astro:assets";
 import hackVsit from "../assets/hackVsit.svg";
 import AceLogo from "../assets/Ace-logo-large.svg";
@@ -24,17 +25,29 @@ const BackgroundLines = await getImage({ src: Lines, format: "svg" });
     <h1>HackVSIT <span>5.0</span></h1>
   </div>
   <div id="hero__info__cta">
-    <!-- <a href="/#" class="btn"><img src="https://avatars.githubusercontent.com/u/38809367?s=200&v=4" > Apply with Devfolio</a>
+    <a href="/#" class="btn">
+      <svg
+        class="logo"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 115.46 123.46"
+        fill="#fff"
+      >
+        <path
+          d="M115.46 68a55.43 55.43 0 0 1-50.85 55.11S28.12 124 16 123a12.6 
+                  12.6 0 0 1-10.09-7.5 15.85 15.85 0 0 0 5.36 1.5c4 .34 10.72.51 20.13.51 
+                  13.82 0 28.84-.38 29-.38h.26a60.14 60.14 0 0 0 54.72-52.47c.05 1.05.08 
+                  2.18.08 3.34z"
+        ></path>
+        <path
+          d="M110.93 55.87A55.43 55.43 0 0 1 60.08 111s-36.48.92-48.58-.12C5 110.29.15 
+                  104.22 0 97.52l.2-83.84C.38 7 5.26.94 11.76.41c12.11-1 48.59.12 48.59.12a55.41 
+                  55.41 0 0 1 50.58 55.34z"
+        ></path>
+      </svg>Apply with Devfolio</a
+    >
     <a href="https://discord.gg/zZNrgktFzP" target="_blank">
       <button><Image src={Discord} alt="discord" /></button>
-    </a> -->
-    <div
-      class="apply-button"
-      data-hackathon-slug="hackvsit-5"
-      data-button-theme="light"
-      style="height: 44px; width: 312px"
-    >
-    </div>
+    </a>
   </div>
 </div>
 
@@ -139,44 +152,30 @@ const BackgroundLines = await getImage({ src: Lines, format: "svg" });
   }
   #hero__info__cta .btn {
     position: relative;
-    padding: 1.5dvh 3dvh;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: auto;
-    color: var(--text-background);
     text-decoration: none;
-    font-size: 1.5dvh;
-    font-weight: bold;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
-      sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    transition: all 0.5s;
-    background-color: var(--accent-primary);
-
-    -ms-flex-align: center;
-    -webkit-box-align: center;
-    align-items: center;
+    font-family: "Nunito Sans Variable", sans-serif;
     background-color: #3770ff;
-    border-radius: 3px;
-    border: none;
-    color: #ffffff;
-    cursor: pointer;
-    display: -ms-flexbox;
-    display: -webkit-box;
-    display: flex;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
-      sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-size: 18px;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 22px;
     font-weight: 600;
-    padding: 12px 20px;
-    text-align: center;
+    outline: none;
+    padding: 0 32px;
+    transition: all 0.1s ease-in 0s;
+    white-space: nowrap;
+    width: auto;
   }
-  #hero__info__cta .btn img {
-    height: 4dvh;
-    width: 4dvh;
+  #hero__info__cta .btn svg {
+    height: 2dvh;
+    width: 2dvh;
+    margin-right: 1rem;
   }
   #hero__info__cta .btn::after {
     content: "";
+    border-radius: 4px;
     position: absolute;
     height: 100%;
     top: -6px;
@@ -344,10 +343,12 @@ const BackgroundLines = await getImage({ src: Lines, format: "svg" });
       font-size: 0.6rem;
       margin: 0;
     }
-    .btn {
+    #hero__info__cta .btn {
       display: flex;
       justify-content: center;
       align-items: center;
+      font-size: 16px;
+      padding: 0 20px;
     }
     [alt="ace-logo-large"] {
       margin: 0 0.5rem;
@@ -368,4 +369,3 @@ const BackgroundLines = await getImage({ src: Lines, format: "svg" });
     }
   });
 </script>
-<script defer async src="https://apply.devfolio.co/v2/sdk.js"></script>
