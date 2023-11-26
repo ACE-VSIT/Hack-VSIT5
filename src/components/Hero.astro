@@ -2,11 +2,18 @@
 import Graphics from "../components/graphics/Graphics.astro";
 import "@fontsource/russo-one";
 import "@fontsource-variable/overpass-mono";
+import { Image, getImage } from "astro:assets";
+import hackVsit from "../assets/hackVsit.svg";
+import AceLogo from "../assets/Ace-logo-large.svg";
+import Discord from "../assets/discord.svg";
+import Lines from "../assets/lines.svg";
+const BackgroundLines = await getImage({ src: Lines, format: "svg" });
 ---
 
-<section id="hero">
+<section id="hero" style={`background-image: url(${BackgroundLines.src})`}>
   <div id="logo__graphic">
-    <img src="/hackVsit.svg" alt="hack" />
+    <Image src={hackVsit} alt="hack" />
+    <!-- <img src="/hackVsit.svg" alt="hack" /> -->
   </div>
   <Graphics top={15} left={16} alt="cubes1" src="cube" />
   <Graphics top={85} left={50} alt="cubes1" src="cubes" />
@@ -17,19 +24,19 @@ import "@fontsource-variable/overpass-mono";
     <h1>HackVSIT <span>5.0</span></h1>
   </div>
   <div id="hero__info__cta">
-    <a href="/#" class="btn"> Register Now</a>
+    <!-- <a href="/#" class="btn"><img src="https://avatars.githubusercontent.com/u/38809367?s=200&v=4" > Apply with Devfolio</a>
     <a href="https://discord.gg/zZNrgktFzP" target="_blank">
-      <button><img src="discord.svg" alt="discord" /></button>
-    </a>
+      <button><Image src={Discord} alt="discord" /></button>
+    </a> -->
+    <div
+      class="apply-button"
+      data-hackathon-slug="hackvsit-5"
+      data-button-theme="light"
+      style="height: 44px; width: 312px"
+    >
+    </div>
   </div>
 </div>
-
-<!-- <div
-    class="apply-button"
-    data-hackathon-slug="YOUR-HACKATHON-SLUG"
-    data-button-theme="light"
-  >
-  </div> -->
 
 <table id="hero__info__table" cellspacing="0">
   <tbody>
@@ -54,7 +61,7 @@ import "@fontsource-variable/overpass-mono";
     </tr>
     <tr>
       <td colspan="3">
-        <img src="/Ace-logo-large.svg" alt="ace-logo-large" />
+        <Image src={AceLogo} alt="ace-logo-large" />
       </td>
     </tr>
   </tbody>
@@ -62,7 +69,6 @@ import "@fontsource-variable/overpass-mono";
 
 <style>
   #hero {
-    background: url("/lines.svg");
     background-size: cover;
     background-position: center;
     width: 100dvw;
@@ -122,7 +128,10 @@ import "@fontsource-variable/overpass-mono";
   }
   #hero__info__cta {
     display: flex;
-    width: 20dvw;
+    min-width: 20dvw;
+    width: auto;
+    gap: 2rem;
+    flex-direction: row;
     height: auto;
     /* margin-left: 2rem; */
     justify-content: start;
@@ -131,15 +140,40 @@ import "@fontsource-variable/overpass-mono";
   #hero__info__cta .btn {
     position: relative;
     padding: 1.5dvh 3dvh;
-    min-width: 5dvw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: auto;
     color: var(--text-background);
     text-decoration: none;
     font-size: 1.5dvh;
     font-weight: bold;
-    font-family: "Overpass Mono Variable", sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
+      sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     transition: all 0.5s;
     background-color: var(--accent-primary);
+
+    -ms-flex-align: center;
+    -webkit-box-align: center;
+    align-items: center;
+    background-color: #3770ff;
+    border-radius: 3px;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
+      sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 18px;
+    font-weight: 600;
+    padding: 12px 20px;
+    text-align: center;
+  }
+  #hero__info__cta .btn img {
+    height: 4dvh;
+    width: 4dvh;
   }
   #hero__info__cta .btn::after {
     content: "";
@@ -218,7 +252,26 @@ import "@fontsource-variable/overpass-mono";
     margin: 0 0.5rem;
   }
   button {
-    display: none;
+    display: block;
+    padding: 0.3rem 2rem;
+    position: relative;
+    font-family: "Overpass Mono Variable", sans-serif;
+    font-size: 1rem;
+    z-index: 2;
+  }
+  button::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    top: -7px;
+    left: -7px;
+    padding: 7px;
+    width: 100%;
+    border: white solid 1px;
+  }
+  button img {
+    height: 4dvh;
+    width: 4dvh;
   }
   #hero__info__table td h1 {
     color: var(--text-primary);
@@ -228,7 +281,7 @@ import "@fontsource-variable/overpass-mono";
   /* mobile view */
   @media only screen and (max-width: 600px) {
     #hero {
-      background: url("/linesMobile.svg");
+      background: url("/linesMobile.svg") !important;
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
@@ -299,35 +352,11 @@ import "@fontsource-variable/overpass-mono";
     [alt="ace-logo-large"] {
       margin: 0 0.5rem;
     }
-    button {
-      display: block;
-      padding: 0.3rem 2rem;
-      position: relative;
-      font-family: "Overpass Mono Variable", sans-serif;
-      font-size: 1rem;
-      z-index: 2;
-    }
-    button::after {
-      content: "";
-      position: absolute;
-      height: 100%;
-      top: -7px;
-      left: -7px;
-      padding: 7px;
-      width: 100%;
-      border: white solid 1px;
-    }
-    button img {
-      height: 4dvh;
-      width: 4dvh;
-    }
   }
 </style>
 
-<script>
-  const logo = document.querySelector(
-    "#logo__graphic img:nth-child(1)"
-  ) as HTMLElement;
+<script is:inline>
+  const logo = document.querySelector("#logo__graphic img:nth-child(1)");
   window.addEventListener("scroll", () => {
     const scroll = window.scrollY;
     const logoScroll = scroll / 2;
@@ -339,5 +368,4 @@ import "@fontsource-variable/overpass-mono";
     }
   });
 </script>
-
-<script src="https://apply.devfolio.co/v2/sdk.js"></script>
+<script defer async src="https://apply.devfolio.co/v2/sdk.js"></script>
