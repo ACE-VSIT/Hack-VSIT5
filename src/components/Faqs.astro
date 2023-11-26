@@ -65,7 +65,7 @@ const faqData = [
   <div class="faq__container">
     <div class="faq__item">
       {
-        faqData.slice(0, faqData.length / 2 + 1).map((faq) => (
+        faqData.slice(0, faqData.length / 2 ).map((faq) => (
           <div class="faq__item__content" onclick="">
             <h3 class="faq__question">{faq.question}</h3>
             <p class="faq__answer">{faq.answer}</p>
@@ -75,7 +75,7 @@ const faqData = [
     </div>
     <div class="faq__item">
       {
-        faqData.slice(faqData.length / 2 + 1, faqData.length).map((faq) => (
+        faqData.slice(faqData.length / 2 , faqData.length).map((faq) => (
           <div class="faq__item__content" onclick="">
             <h3 class="faq__question">{faq.question}</h3>
             <p class="faq__answer">{faq.answer}</p>
