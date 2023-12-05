@@ -17,9 +17,26 @@ const optimizedBackground = await getImage({ src: navbar, format: "svg" });
         </a>
       </div>
       <div class="header__menuIcon">
-        <a href="#">
-          <img src="/hamburgermenu.svg" alt="logo" />
-        </a>
+        <div id="header_menu_toggle">
+          <img id="menu-icon" src="/hamburgermenu.svg" alt="logo" />
+        </div>
+      </div>
+      <div id="header_menu_overlay">
+        <div class="overlay_logo">
+          <a href="#">
+            <img src="/NewLogo.svg" alt="logo" />
+          </a>
+          <img id="menu-icon" src="/close.svg" alt="logo" />
+        </div>
+        <div class="overlay_menu">
+          <ul>
+            <li><a href="#themes">Themes</a></li>
+            <li><a href="#prizes">Prizes</a></li>
+            <li><a href="#timeline">Timeline</a></li>
+            <li><a href="#about-us">About us</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </div>
       </div>
     </div>
     <div class="header__menu">
@@ -110,8 +127,20 @@ const optimizedBackground = await getImage({ src: navbar, format: "svg" });
     border-radius: 50px;
     transition: all 0.3s ease-in-out;
   }
+  #header_menu_overlay {
+    display: none;
+    position: absolute;
+    top: 0;
+    border: 1px solid var(--text-primary);
+    left: 0;
+    width: 100%;
+    border-radius: 10px;
+    min-height: 30vh;
+    height: auto;
+    padding-bottom: 5vh;
+  }
   /* mobile view */
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 1200px) {
     .header__menu {
       display: none;
     }
@@ -128,8 +157,55 @@ const optimizedBackground = await getImage({ src: navbar, format: "svg" });
       width: 100%;
       margin-top: 2rem;
     }
+    #header_menu_overlay {
+      display: none;
+      background: var(--primary-dark);
+      z-index: 2;
+      width: 100%;
+      flex-direction: column;
+    }
+
+    .overlay_logo {
+      display: flex;
+      justify-content: space-between;
+      margin: 0 0.8rem;
+    }
+    .overlay_logo a img {
+      height: 4rem;
+    }
+    .overlay_logo > img {
+      height: 3rem;
+      margin-top: 0.5rem;
+    }
+    .overlay_menu {
+      justify-content: center;
+      align-items: center;
+      display: flex;
+    }
+    .overlay_menu ul {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      font-family: "Overpass Mono Variable", sans-serif;
+    }
+    .overlay_menu ul li {
+      margin: 1rem;
+    }
+    .overlay_menu ul li a {
+      color: var(--text-primary);
+      font-size: 1.25rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all 0.3s ease-in-out;
+    }
     .logos {
       display: flex;
+      position: relative;
       justify-content: space-between;
       align-items: center;
       background: var(--primary-dark);
@@ -153,3 +229,14 @@ const optimizedBackground = await getImage({ src: navbar, format: "svg" });
     }
   }
 </style>
+
+<script is:inline>
+  const menuIcon = document.getElementById("header_menu_toggle");
+  const menuOverlay = document.getElementById("header_menu_overlay");
+  menuIcon.addEventListener("click", () => {
+    menuOverlay.style.display = "flex";
+  });
+  menuOverlay.addEventListener("click", () => {
+    menuOverlay.style.display = "none";
+  });
+</script>
