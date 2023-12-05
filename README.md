@@ -1,40 +1,29 @@
-# Astro Starter Kit: Basics
+# Hack Vsit 5.0
 
-```sh
-npm create astro@latest -- --template basics
-```
+ACE - The Association of Computer Enthusiasts, presents the 5th edition of HackVSIT. We at ACE believe in encouraging the growing talent and by HackVSIT we bring together, people with different outlook and solutions for already existing problems using technology and design. For 24 hours, you will work together with your teams to envision and develop the technology of tomorrow for solving the problems of today.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## 🚀 Quick start
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+- **Clone the repo.**
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+    ```shell
+    git clone
+    ```
 
-## 🚀 Project Structure
+- **Start developing.**
 
-Inside of your Astro project, you'll see the following folders and files:
+    Navigate into your new site’s directory and start it up.
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+    ```shell
+    cd hackvsit-5.0/
+    npm install
+    npm run dev
+    ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+- **Open the source code and start editing!**
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
+    Your site is now running at `http://localhost:4321`!
+    Open the `hackvsit-5.0` directory in your code editor of choice and edit `src/pages/index.astro`. Save your changes and the browser will update in real time!
 
 ## 🧞 Commands
 
@@ -49,6 +38,65 @@ All commands are run from the root of the project, from a terminal:
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
 
-## 👀 Want to learn more?
+## Directory Structure
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+```text
+├── README.md
+├── src
+│   ├── assets
+│   │   ├── Ace-logo-large.svg
+│   │   ├── discord.svg
+│   │   ├── hackVsit.svg
+│   │   ├── lines.svg
+│   │   └── navbar.svg
+│   ├── components
+│   │   ├── card
+│   │   │   ├── Card.astro
+│   │   │   └── MembersCard.astro
+│   │   ├── Faq.astro
+│   │   ├── Faqs.astro
+│   │   ├── graphics
+│   │   │   ├── Graphics.astro
+│   │   │   └── Line.astro
+│   │   ├── Hero.astro
+│   │   ├── Info.astro
+│   │   ├── Judge.astro
+│   │   ├── Sponsors.astro
+│   │   ├── Team.astro
+│   │   ├── Timeline.astro
+│   │   └── ui
+│   │       ├── Footer.astro
+│   │       └── Navbar.astro
+│   ├── env.d.ts
+│   ├── layouts
+│   │   └── Layout.astro
+│   └── pages
+│       ├── 404.astro
+│       └── index.astro
+|── public
+│   ├── Ace-logo-large.svg
+│   ├── add.svg
+│   ├── close.svg
+│   ├── cover.jpg
+│   ├── cubes.svg
+│   ├── cube.svg
+│   ├── Devfolio.png
+│   ├── discord.svg
+│   ├── favicon.png
+│   ├── footer-line.svg
+│   ├── Hack.svg
+│   ├── hackVsit.svg
+│   ├── hamburgermenu.svg
+│   ├── judge
+│   ├── linesMobile.svg
+│   ├── lines.svg
+│   ├── navbar.svg
+│   ├── NewLogo.svg
+│   ├── socials
+│   ├── sponsors
+│   └── VSIT.svg
+|── tsconfig.json
+├── package.json
+└── pnpm-lock.yaml
+
+```
