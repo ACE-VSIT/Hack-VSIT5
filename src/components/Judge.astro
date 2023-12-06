@@ -210,6 +210,20 @@ const Mentor_data: Judge[] = [
     grid-gap: 2rem;
   }
   /* mobile view */
+  @media only screen and (max-width: 1000px) {
+    #judge_mentors {
+      margin: 0 5dvw;
+    }
+    #judge_mentors h1 {
+      font-size: 6rem;
+    }
+    #judge_mentors .who {
+      margin-right: 2rem;
+    }
+    .groups {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
   @media only screen and (max-width: 600px) {
     #judge_mentors {
       margin: 0 5dvw;
