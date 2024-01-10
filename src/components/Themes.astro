@@ -1,0 +1,243 @@
+---
+import "@fontsource-variable/overpass-mono";
+import "@fontsource/russo-one";
+import Graphics from "../components/graphics/Graphics.astro";
+import Line from "./graphics/Line.astro";
+import { Image } from "astro:assets";
+import Sustainability from "../assets/sustainability.svg";
+import HeadthCare from "../assets/healthcare.svg";
+import Fintech from "../assets/fintech.svg";
+import OpenInnovation from "../assets/open-innovation.svg";
+import Web3 from "../assets/web3.svg";
+import Education from "../assets/education.svg";
+const themeData = [
+  {
+    Title: "Sustainability",
+    icon: Sustainability,
+    Content:
+      "Sustainability embodies the essence of responsible innovation. It extends beyond environmental considerations, including social and economic dimensions.",
+  },
+  {
+    Title: "Fintech and financial inclusion",
+    icon: Fintech,
+    Content:
+      "Fintech and Financial Inclusion challenge participants to merge technological innovation with the imperative goal of fostering financial inclusivity.",
+  },
+
+  {
+    Title: "Health and Wellness",
+    icon: HeadthCare,
+    Content:
+      "Health and Wellness are closely connected and have a significant impact on human life. a healthy body facilitates the absorption of knowledge, fostering intelligence.",
+  },
+  {
+    Title: "Education and EdTech",
+    icon: Education,
+    Content:
+      "The Education and EdTech theme for our hackathon represents a compelling and socially impactful focus, aligning with the evolving landscape of learning technologies.",
+  },
+  {
+    Title: "Web3 and blockchain",
+    icon: Web3,
+    Content:
+      "Web3, the next evolution of the internet, coupled with blockchain technology, forms the foundation of this theme.",
+  },
+
+  {
+    Title: "Hack for good (open innovation)",
+    icon: OpenInnovation,
+    Content:
+      "Hack For Good is the uplifting and community-focused theme of HackVSIT 5.0. It challenges participants to use their coding skills and creative thinking to work on projects that make a positive impact on society",
+  },
+];
+---
+
+<section id="themes">
+  <h1>{themeData.length} .</h1>
+  <div class="header">
+    <p>THEMES</p>
+    <Line top={1.1} left={10} height={15} rotation={-90} design="primary" />
+  </div>
+
+  <div class="theme__container">
+    <!-- {
+      themeData.slice(0, themeData.length).map((theme) => (
+        <div class="theme__item__content">
+          <h3 class="theme__Title">{theme.Title}</h3>
+          <Image class="theme__item__icon" src={theme.icon} alt={theme.Title} />
+          <p class="theme__Content">{theme.Content}</p>
+        </div>
+      ))
+    } -->
+    <div class="theme__item">
+      {
+        themeData.slice(0, themeData.length / 3).map((theme) => (
+          <div class="theme__item__content">
+            <h3 class="theme__Title">{theme.Title}</h3>
+            <Image
+              class="theme__item__icon"
+              src={theme.icon}
+              alt={theme.Title}
+            />
+            <p class="theme__Content">{theme.Content}</p>
+          </div>
+        ))
+      }
+    </div>
+    <div class="theme__item">
+      {
+        themeData
+          .slice(themeData.length / 3, (themeData.length * 2) / 3)
+          .map((theme) => (
+            <div class="theme__item__content">
+              <h3 class="theme__Title">{theme.Title}</h3>
+              <Image
+                class="theme__item__icon"
+                src={theme.icon}
+                alt={theme.Title}
+              />
+              <p class="theme__Content">{theme.Content}</p>
+            </div>
+          ))
+      }
+    </div>
+    <div class="theme__item">
+      {
+        themeData
+          .slice((themeData.length * 2) / 3, themeData.length)
+          .map((theme) => (
+            <div class="theme__item__content">
+              <h3 class="theme__Title">{theme.Title}</h3>
+              <Image
+                class="theme__item__icon"
+                src={theme.icon}
+                alt={theme.Title}
+              />
+              <p class="theme__Content">{theme.Content}</p>
+            </div>
+          ))
+      }
+    </div>
+  </div>
+  <Graphics src="cubes" top={25} left={-5} alt="cubes" />
+  <Graphics src="cubes" top={50} right={-5} alt="cube" />
+  <Graphics src="cubes" top={75} left={-5} alt="cubes" />
+</section>
+<style>
+  #themes {
+    position: relative;
+    min-height: 50dvh;
+    height: auto;
+    padding: 5dvh 10dvw;
+  }
+  h3,
+  h1 p {
+    cursor: pointer;
+  }
+  .header {
+    position: relative;
+  }
+  #themes h1 {
+    font-size: 10em;
+    height: 0.8em;
+    font-weight: bold;
+    padding: 0;
+    margin: 0;
+    color: var(--text-background);
+  }
+  #themes h1::selection {
+    background: transparent;
+  }
+  .header > p {
+    color: var(--text-primary);
+    font-size: 2rem;
+    margin-left: 1rem;
+  }
+  #themes p::selection {
+    background: transparent;
+  }
+  .theme__container {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4rem;
+  }
+  .theme__item__icon {
+    height: 6rem;
+    width: 6rem;
+    margin-top: 0.4rem;
+  }
+  .theme__item {
+    width: 100%;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .theme__item__content {
+    padding: 2rem;
+    border-radius: 2rem;
+    border: 1px solid var(--text-primary);
+  }
+  .theme__Title {
+    margin-bottom: 1dvh;
+    font-size: 1.25rem;
+    line-height: 2rem;
+    color: var(--text-primary);
+    font-family: "Overpass Mono", monospace;
+  }
+  .theme__Content {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.5rem;
+    padding-right: 10%;
+    font-family: "Overpass Mono", monospace;
+  }
+  @media screen and (max-width: 1200px) and (min-width: 769px) {
+    .theme__container {
+      width: 100%;
+      gap: 1.5rem;
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .theme__item {
+      gap: 1.5rem;
+    }
+    .theme__item:last-child {
+      grid-column: span 2;
+      flex-direction: row;
+    }
+    .theme__item__icon img {
+      height: 1.5rem;
+      margin-top: 0.4rem;
+    }
+    .theme__Title {
+      font-size: 1rem;
+    }
+    .theme__Content {
+      font-size: 0.8rem;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    #themes {
+      padding: 5dvh 5dvw;
+    }
+    .theme__container {
+      width: 100%;
+      gap: 1.5rem;
+      grid-template-columns: repeat(1, 1fr);
+    }
+    .theme__item {
+      gap: 1.5rem;
+    }
+    .theme__item__icon img {
+      height: 1.5rem;
+      margin-top: 0.4rem;
+    }
+    .theme__Title {
+      font-size: 1rem;
+    }
+    .theme__Content {
+      font-size: 0.8rem;
+    }
+  }
+</style>
