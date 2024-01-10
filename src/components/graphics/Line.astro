@@ -14,9 +14,9 @@ const { top, left,right, rotation, design, height } = Astro.props;
 <span
   class="line"
   style={{
-    top: top + "dvh",
-    left: left + "dvw",
-    right: right + "dvw",
+    top: top + "rem",
+    left: left + "rem",
+    right: right + "rem",
     height: height + "dvh",
     transform: `rotate(${rotation}deg)`,
     opacity: design === "primary" ? "1" : "0.3",

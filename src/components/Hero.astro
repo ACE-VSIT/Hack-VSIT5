@@ -6,6 +6,7 @@ import { Image, getImage } from "astro:assets";
 import hackVsit from "../assets/hackVsit.svg";
 import AceLogo from "../assets/Ace-logo-large.svg";
 import Discord from "../assets/discord.svg";
+import HackText from "../assets/Hack-Text.svg";
 import Lines from "../assets/lines.svg";
 const BackgroundLines = await getImage({ src: Lines, format: "svg" });
 ---
@@ -13,6 +14,7 @@ const BackgroundLines = await getImage({ src: Lines, format: "svg" });
 <section id="hero" style={`background-image: url(${BackgroundLines.src})`}>
   <div id="logo__graphic">
     <Image src={hackVsit} alt="hack" />
+    <Image src={HackText} alt="hack-mobile" />
     <!-- <img src="/hackVsit.svg" alt="hack" /> -->
   </div>
   <Graphics top={15} left={16} alt="cubes1" src="cube" />
@@ -251,6 +253,9 @@ const BackgroundLines = await getImage({ src: Lines, format: "svg" });
   [alt="ace-logo-large"] {
     margin: 0 0.5rem;
   }
+  [alt="hack-mobile"] {
+    display: none;
+  }
   button {
     display: block;
     padding: 0.3rem 2rem;
@@ -278,8 +283,9 @@ const BackgroundLines = await getImage({ src: Lines, format: "svg" });
     -webkit-text-stroke-width: 2px;
     -webkit-text-stroke-color: var(--text-primary);
   }
+
   /* mobile view */
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 1200px) {
     #hero {
       background: url("/linesMobile.svg") !important;
       background-size: cover;
@@ -313,6 +319,14 @@ const BackgroundLines = await getImage({ src: Lines, format: "svg" });
       width: 120dvw;
       object-fit: contain;
       overflow: hidden;
+    }
+    [alt="hack-mobile"] {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    [alt="hack"] {
+      display: none;
     }
 
     #hero__info__cta {

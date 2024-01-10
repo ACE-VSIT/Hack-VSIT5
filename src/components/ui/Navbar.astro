@@ -1,8 +1,11 @@
 ---
 import "@fontsource-variable/overpass-mono";
-import { getImage } from "astro:assets";
+import { getImage, Image } from "astro:assets";
 import navbar from "../../assets/navbar.svg";
-const optimizedBackground = await getImage({ src: navbar, format: "svg" });
+import HackLogo from "../../assets/HackLogo.svg";
+import hamburgermenu from "../../assets/hamburgermenu.svg";
+import closeIcon from "../../assets/close.svg";
+const optimizedBackground = await getImage({ src: navbar, format: "webp" });
 ---
 
 <header
@@ -13,28 +16,28 @@ const optimizedBackground = await getImage({ src: navbar, format: "svg" });
     <div class="logos">
       <div class="header__logo">
         <a href="#">
-          <img src="/NewLogo.svg" alt="logo" />
+          <Image src={HackLogo} alt="logo" />
         </a>
       </div>
       <div class="header__menuIcon">
         <div id="header_menu_toggle">
-          <img id="menu-icon" src="/hamburgermenu.svg" alt="logo" />
+          <Image src={hamburgermenu} alt="logo" />
         </div>
       </div>
       <div id="header_menu_overlay">
         <div class="overlay_logo">
           <a href="#">
-            <img src="/NewLogo.svg" alt="logo" />
+            <Image src={HackLogo} style={{width:"4rem"}} alt="logo" />
           </a>
-          <img id="menu-icon" src="/close.svg" alt="logo" />
+          <Image id="menu-icon" src={closeIcon} alt="logo" />
         </div>
         <div class="overlay_menu">
           <ul>
+            <li><a href="#about-us">About us</a></li>
             <li><a href="#themes">Themes</a></li>
+            <li><a href="#faq">FAQ</a></li>
             <li><a href="#prizes">Prizes</a></li>
             <li><a href="#timeline">Timeline</a></li>
-            <li><a href="#about-us">About us</a></li>
-            <li><a href="#faq">FAQ</a></li>
           </ul>
         </div>
       </div>
@@ -143,6 +146,10 @@ const optimizedBackground = await getImage({ src: navbar, format: "svg" });
   @media screen and (max-width: 1200px) {
     .header__menu {
       display: none;
+    }
+    #menu-icon{
+      width: 2.5rem;
+      height: 2.5rem;
     }
     .header {
       background-image: none !important;
