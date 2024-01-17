@@ -3,138 +3,59 @@ import Card from "./card/Card.astro";
 interface Judge {
   name: string;
   description: string;
-  src: string;
+  src: ImageMetadata;
 }
 import Graphics from "./graphics/Graphics.astro";
 import "@fontsource-variable/overpass-mono";
 import Line from "./graphics/Line.astro";
+import Anmoldeep from "../assets/judges/Anmoldeep.png";
+import Ayon from "../assets/judges/Ayon.png";
+import Shivam from "../assets/judges/Shivam.jpg";
+import Taranjot from "../assets/judges/Taranjot.png";
+import Ayush from "../assets/judges/Ayush.jpg";
+
 const Judge_data: Judge[] = [
   {
-    name: "Dr. Dheeraj Malhotra",
-    description: "ASSOCIATE PROFESSOR AT VIPS",
-    src: "/judge/dheeraj4.0.jpg",
+    name: "Ayon Roy",
+    description: "Executive Data Scientist @ NielsenIQ",
+    src: Ayon,
   },
   {
-    name: "Dr. Pawan Whig",
-    description: "IEEE SENIOR MEMBER",
-    src: "/judge/pawan4.0.png",
-  },
-  {
-    name: "Srijit S. Madhavan",
-    description: "FRONTEND LEAD AT BLUE SKY ANALYTICS",
-    src: "/judge/srijit4.0.jpg",
-  },
-  {
-    name: "Pawan Singhla",
-    description: "SDE-1 AT ZUNPULSE",
-    src: "/judge/pawansinghla4.0.jpg",
-  },
-  {
-    name: "Aditya Dhawan",
-    description: "SDE3 AT TESCO",
-    src: "/judge/AdityaDhawan.jfif",
-  },
-  {
-    name: "Shitiz Aggarwal",
-    description: "CO-FOUNDER AT CODE SAUCE",
-    src: "/judge/shitiz4.0.jpg",
-  },
-  {
-    name: "Karuna Tata",
-    description: "COACH AT MLH",
-    src: "/judge/karuna4.0.jpg",
-  },
-  {
-    name: "Anshika Gupta",
-    description: "EX JR. SOFTWARE ENGINEER AT MYKARE",
-    src: "/judge/Anshika4.0.jpg",
-  },
+    name: "Shivam Joshi",
+    description:"Founder and Executive Director at Codon’s Ltd. Corporate Trainer",
+    src: Shivam
+  }
 ];
 const Mentor_data: Judge[] = [
   {
-    name: "Anmol Jain",
-    description: "DESIGN TEAM LEAD & FOUNDING MEMBER AT SURAASA",
-    src: "/judge/Anmol4.0.jpg",
+    name: "Ayush Kumar",
+    description: "GitHub Campus Expert 🚩|AWS Community Builder",
+    src: Ayush
   },
   {
-    name: "Gaurav Gogia",
-    description: "SECURITY R&D AT TENABLE",
-    src: "/judge/gaurav4.0.jpg",
+    name: "Anmoldeep Singh",
+    description: "Salesforce Developer @ Persistent Systems Limited",
+    src: Anmoldeep
   },
   {
-    name: "Mihir Bagchi",
-    description: "SDE-1 AT VAHAK",
-    src: "/judge/mihir4.0.jpg",
-  },
-  {
-    name: "Ansh Saini",
-    description: "FOUNDING MEMBER AT SURASA",
-    src: "/judge/ansh4.0.jpg",
-  },
-  {
-    name: "Sameer Kumar",
-    description: "PRODUCT ENGINEER AT SYLVA",
-    src: "/judge/Sameer4.0.jpg",
-  },
-  {
-    name: "Preetam Yadav",
-    description: "SDE AT LES TRANSFORMATION",
-    src: "/judge/preetam4.0.jpg",
-  },
-  {
-    name: "Geetansh Monga",
-    description: "FLUTTER DEVELOPER AT SYNQ.",
-    src: "/judge/geetansh4.0.jpg",
-  },
-  {
-    name: "Dhirendra Chaudhary",
-    description: "DATA SCIENTIST AT IHX PRIVATE LIMITED",
-    src: "/judge/dhirendra4.0.jpg",
-  },
-  {
-    name: "Jai Tomar",
-    description: "MOTION GRAPHIC DESIGNER AT PINEAPPPLE",
-    src: "/judge/jai4.0.jpg",
-  },
-  {
-    name: "Lakshay Kapoor",
-    description: "FOUNDING MEMBER AT SURASA",
-    src: "/judge/lakshay4.0.jpg",
-  },
-  {
-    name: "Prateek Batra",
-    description: "ANDROID ENGINEER AT GOJEK",
-    src: "/judge/prateek4.0.jpg",
-  },
-  {
-    name: "Amitesh Tiwari",
-    description: "SOFTWARE ENGINEER AT UPSTOX",
-    src: "/judge/amitesh4.0.jpeg",
-  },
-  {
-    name: "Shreyansh Jain",
-    description: "TECHNOLOGY LEAD AT SURASA",
-    src: "/judge/shreyans4.0.jpg",
-  },
-  {
-    name: "Chirag Jain",
-    description: "SOLUTIONS ARCHITECT AT SURASA",
-    src: "/judge/chirag4.0.avif",
-  },
+    name:"Taranjot",
+    description:"Mentor @SIH 2023 | Full Stack Developer @Placewit",
+    src:Taranjot
+  }
 ];
 ---
 
 <section id="judge_mentors">
   <h1>{Judge_data.length + Mentor_data.length}.</h1>
-  <p>PREVIOUS JUDGES & MENTORS</p>
+  <p>JUDGES & MENTORS</p>
   <div class="header">
     <p class="who">JUDGES</p>
     <Line top={1} right={16} height={15} rotation={-90} design="primary" />
   </div>
   <Graphics src="cubes" top={100} left={-15} alt="clouds" />
   <Graphics src="cube" top={50} right={-10} alt="clouds" />
-  <Graphics src="cubes" top={150} right={-15} alt="clouds" />
-  <Graphics src="cube" top={200} left={-15} alt="clouds" />
+  <!-- <Graphics src="cubes" top={150} right={-15} alt="clouds" />
+  <Graphics src="cube" top={200} left={-15} alt="clouds" /> -->
   <div class="groups">
     {
       Judge_data.map((judge) => (
@@ -168,7 +89,7 @@ const Mentor_data: Judge[] = [
 <style>
   #judge_mentors {
     position: relative;
-    min-height: 50dvh;
+    min-height: 10dvh;
     margin: 0 10dvw;
     font-family: "Overpass Mono Variable", monospace;
   }

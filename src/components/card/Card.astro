@@ -1,17 +1,18 @@
 ---
 interface Props {
-  src: string;
+  src: ImageMetadata;
   alt: string;
   name?: string;
   description?: string;
 }
 import "@fontsource-variable/overpass-mono";
+import { Image } from "astro:assets";
 
 const { src, alt, name, description } = Astro.props;
 ---
 
 <div id="card">
-  <img loading="lazy" src=`${src}` alt=`${alt}` />
+  <Image src={src} alt=`${alt}` />
   <div class="p-4">
     <h3 class="text-xl font-bold">{name}</h3>
     <p class="text-gray-700">{description}</p>
