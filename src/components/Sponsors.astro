@@ -173,11 +173,11 @@ const companies: Company[] = [
     }
     .premium-sponsor {
       height: 15vh;
-      width: 25vw;
+      width: 15vw;
     }
     .partner-sponsor,.sustainability-partner,.certificate-partner,.media-partners {
       height: 10vh;
-      width: 10vw;
+      width: 15vw;
     }
     #sponsors h1 {
       font-size: 10em;
@@ -202,25 +202,34 @@ const companies: Company[] = [
       display: flex;
       gap: 2rem;
       margin: 5dvh 0;
-      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+      flex-wrap: wrap;
     }
     #sponsors .company {
-      width: 100%;
+      width: auto;
       height: 100%;
       display: flex;
       flex-direction: column;
+      align-items: center;
       height: auto;
     }
     .company-logo {
       display: flex;
       flex-wrap:wrap;
+      border: 1px solid white;
+      width: auto;
+      padding: 2rem;
+      border-radius: 2rem;
       flex-direction: row;
+      justify-content: center;
       align-items: center;
       gap: 3rem;
       margin-left: 1rem;
     }
     .company .tier {
-      font-size: 1rem;
+      font-size: 1.25rem;
       color: var(--text-primary);
       margin-left: 1rem;
       padding: 0;
@@ -246,15 +255,19 @@ const companies: Company[] = [
       }
       .event-partner {
         height: auto;
-        width: 40vw;
+        width: 60vw;
       }
       .premium-sponsor {
         height: auto;
-        width: 35vw;
+        width: 50vw;
       }
-      .partner-sponsor,.sustainability-partner,.certificate-partner,.media-partners {
-        height: auto;
+      .partner-sponsor {
+        height: 5vh;
         width: 30vw;
+      }
+      .sustainability-partner,.certificate-partner,.media-partners {
+        height: auto;
+        width: 40vw;
       }
     }
   </style>
