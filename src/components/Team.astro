@@ -1,73 +1,10 @@
 ---
 import Card from "./card/MembersCard.astro";
-interface TeamType {
-  name: string;
-  src: string;
-  socials?: {
-    linkedin?: string;
-    instagram?: string;
-  };
-}
 import Graphics from "./graphics/Graphics.astro";
 import "@fontsource-variable/overpass-mono";
-const data: TeamType[] = [
-  {
-    name: "Kanishk Rawat",
-    src: "https://avatars.githubusercontent.com/u/56189243?v=4",
-    socials: {
-      linkedin: "https://www.linkedin.com/in/siddharth-singh-1b1b1b1b/",
-    },
-  },
-  {
-    name: "Kanishk Rawat",
-    src: "https://avatars.githubusercontent.com/u/56189243?v=4",
-    socials: {
-      linkedin: "https://www.linkedin.com/in/siddharth-singh-1b1b1b1b/",
-    },
-  },
-  {
-    name: "Kanishk Rawat",
-    src: "https://avatars.githubusercontent.com/u/56189243?v=4",
-    socials: {
-      linkedin: "https://www.linkedin.com/in/siddharth-singh-1b1b1b1b/",
-    },
-  },
-  {
-    name: "Kanishk Rawat",
-    src: "https://avatars.githubusercontent.com/u/56189243?v=4",
-    socials: {
-      linkedin: "https://www.linkedin.com/in/siddharth-singh-1b1b1b1b/",
-    },
-  },
-  {
-    name: "Kanishk Rawat",
-    src: "https://avatars.githubusercontent.com/u/56189243?v=4",
-    socials: {
-      linkedin: "https://www.linkedin.com/in/siddharth-singh-1b1b1b1b/",
-    },
-  },
-  {
-    name: "Kanishk Rawat",
-    src: "https://avatars.githubusercontent.com/u/56189243?v=4",
-    socials: {
-      linkedin: "https://www.linkedin.com/in/siddharth-singh-1b1b1b1b/",
-    },
-  },
-  {
-    name: "Kanishk Rawat",
-    src: "https://avatars.githubusercontent.com/u/56189243?v=4",
-    socials: {
-      linkedin: "https://www.linkedin.com/in/siddharth-singh-1b1b1b1b/",
-    },
-  },
-  {
-    name: "Kanishk Rawat",
-    src: "https://avatars.githubusercontent.com/u/56189243?v=4",
-    socials: {
-      linkedin: "https://www.linkedin.com/in/siddharth-singh-1b1b1b1b/",
-    },
-  },
-];
+import { type TeamType } from "../pages/team.astro";
+
+const { data:TeamData } = Astro.props as { data: TeamType[] };
 ---
 
 <section id="judge_mentors">
@@ -77,7 +14,7 @@ const data: TeamType[] = [
 
   <div id="judges">
     {
-      data.map((team) => (
+      TeamData.map((team) => (
         <Card
           name={team.name}
           src={team.src}
@@ -94,7 +31,7 @@ const data: TeamType[] = [
     position: relative;
     min-height: 50dvh;
     height: auto;
-    margin: 0 10dvw;
+    margin: 20dvh 10dvw;
     font-family: "Overpass Mono Variable", monospace;
   }
   #judge_mentors h1 {
@@ -135,6 +72,23 @@ const data: TeamType[] = [
     #judge_mentors {
       margin: 0 5dvw;
     }
+    #judges {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+  @media only screen and (max-width: 1000px) {
+    #judge_mentors {
+      margin: 0 5dvw;
+    }
+    #judges {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media only screen and (max-width: 600px) {
+    #judge_mentors {
+      margin: 0 5dvw;
+    }
+
     #judges {
       grid-template-columns: repeat(1, 1fr);
     }

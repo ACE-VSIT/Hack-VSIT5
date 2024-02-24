@@ -1,0 +1,143 @@
+---
+import Teams from "../components/Team.astro";
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/ui/Navbar.astro";
+import Footer from "../components/ui/Footer.astro";
+import Sujal from "../assets/team/Sujal.png";
+import Hemant from "../assets/team/hemant.jpg";
+import Harshita from "../assets/team/harshita.jpeg";
+import Sarthak from "../assets/team/Sarthak.jpeg";
+import Varun from "../assets/team/varun.jpg";
+import Nidhi from "../assets/team/Nidhi.jpg";
+import Priyanshu from "../assets/team/Priyanshu.jpg";
+import Sanya from "../assets/team/Sanya.jpg";
+import Shivang from "../assets/team/Shivang.png";
+import Kalash from "../assets/team/Kalash.jpg";
+import Kanak from "../assets/team/Kanak.jpg";
+import Ananya from "../assets/team/Ananya.jpg";
+import Vansh from "../assets/team/Vansh.jpeg";
+export interface TeamType {
+  name: string;
+  src: ImageMetadata
+  socials?: {
+    linkedin?: string;
+    instagram?: string;
+  };
+}
+const data: TeamType[] = [
+  {
+    name: "Sujal",
+    src: Sujal,
+    socials: {
+      instagram: "https://www.instagram.com/su.jal2344?igsh=bjR5amxsaGFsMGRv",
+      linkedin: "https://www.linkedin.com/in/sujal-kanojia-2bb137233/",
+    },
+  },
+  {
+    name: "Hemant Kathuria",
+    src: Hemant,
+    socials: {
+      instagram: "https://www.instagram.com/kon_heman_t/",
+      linkedin: "https://www.linkedin.com/in/hemant-kathuria/",
+    },
+  },
+  {
+    name: "Harshita",
+    src: Harshita,
+    socials: {
+      instagram: "https://www.instagram.com/hershoeta/",
+      linkedin: "https://www.linkedin.com/in/harshita-sanjaysharma/",
+    },
+  },
+  {
+    name: "Sarthak Goel",
+    src: Sarthak,
+    socials: {
+      instagram: "https://x.com/sarty_definite",
+      linkedin: "https://linkedin.com/in/sarty-definite",
+    },
+  },
+  {
+    name: "Varun Sharma",
+    src: Varun,
+    socials: {
+      linkedin:
+        "https://www.linkedin.com/in/varun-sharma-22768a251?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    },
+  },
+  {
+    name: "Nidhi Jain",
+    src: Nidhi,
+    socials: {
+      instagram: "https://www.instagram.com/jain05nidhi/",
+      linkedin: "https://www.linkedin.com/in/jainnidhi24/",
+    },
+  },
+  {
+    name: "Priyanshu Chauhan",
+    src: Priyanshu,
+    socials: {
+      instagram: "https://www.instagram.com/priyanxhooo/",
+      linkedin: "https://www.linkedin.com/in/chauhan-priyanshu/",
+    },
+  },
+  {
+    name: "Sanya Virmani",
+    src: Sanya,
+    socials: {
+      instagram: "https://instagram.com/sanyaa.virmani?igshid=NGVhN2U2NjQ0Yg==",
+      linkedin: "http://www.linkedin.com/in/sanya-virmani",
+    },
+  },
+  {
+    name: "Shivang Tiwari",
+    src: Shivang,
+    socials: {
+      instagram:
+        "https://www.instagram.com/shivangtiwari_9?igsh=MXV2eXQ2dDk3a3g4Mg==",
+      linkedin: "https://www.linkedin.com/in/shivang-tiwari2415",
+    },
+  },
+  {
+    name: "Kalash Bansal",
+    src: Kalash,
+    socials: {
+      instagram: "Instagram.com/kalash_325",
+      linkedin: "https://www.linkedin.com/in/kalashbansal",
+    },
+  },
+  {
+    name: "Kanak Aggarwal",
+    src: Kanak,
+    socials: {
+      instagram:
+        "https://instagram.com/kanak.doodles._?utm_source=qr&igshid=MzNlNGNkZWQ4Mg%3D%3D",
+      linkedin: "https://www.linkedin.com/in/kanakaggarwal15",
+    },
+  },
+  {
+    name: "Ananya Shrivastava",
+    src: Ananya,
+    socials: {
+      instagram:
+        "https://www.instagram.com/__ananyashrivastava__?igsh=MW9sdGRra2t1anJraw==",
+      linkedin:
+        "https://www.linkedin.com/in/ananya-shrivastava-80858826b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    },
+  },
+  {
+    name: "Vansh Sharma",
+    src: Vansh,
+    socials: {
+      instagram: "none",
+      linkedin: "https://www.linkedin.com/in/vanshcs/",
+    },
+  },
+];
+---
+
+<Layout title="HackVsit 5.0">
+  <Navbar />
+  <Teams data={data}/>
+  <Footer />
+</Layout>
