@@ -3,7 +3,7 @@ import "@fontsource-variable/overpass-mono";
 import Graphics from "./graphics/Graphics.astro";
 import Line from "./graphics/Line.astro";
 type Company = {
-  level: "Event-Partner" | "Premium-Sponsor" | "Partner-Sponsor"|"Media-Partners"|"Sustainability-Partner"|"Certificate-Partner";
+  level: "Event-Partner" | "Premium-Sponsor" | "Partner-Sponsor"|"Media-partner"|"Sustainability-Partner"|"Certificate-Partner"|"Track-Sponsor"|"Bronze"|"Community-Partner"|"Silver";
   data: {
     logo: string;
     name: string;
@@ -11,18 +11,30 @@ type Company = {
   }[];
 };
 const companies: Company[] = [
+  // {
+  //   level: "Event-Partner",
+  //   data: [
+  //     {
+  //       name: "MLH",
+  //       logo: "sponsors/mlh-logo.png",
+  //       link: "http://mlh.io/"
+  //     }
+  //   ]
+  // },
+  // {
+  //   level: "Premium-Sponsor",
+  //   data: [
+      
+  //     // {
+  //     //   name: "Digital Ocean",
+  //     //   logo: "sponsors/DO.png",
+  //     //   link: "https://www.digitalocean.com/"
+  //     // },
+      
+  //   ]
+  // },
   {
-    level: "Event-Partner",
-    data: [
-      {
-        name: "MLH",
-        logo: "sponsors/mlh-logo.png",
-        link: "http://mlh.io/"
-      }
-    ]
-  },
-  {
-    level: "Premium-Sponsor",
+    level: "Partner-Sponsor",
     data: [
       {
         name: "DEVFOLIO LOGO",
@@ -30,34 +42,115 @@ const companies: Company[] = [
         link: "https://devfolio.co"
       },
       {
-        name: "Digital Ocean",
-        logo: "sponsors/DO.png",
-        link: "https://www.digitalocean.com/"
-      },
-      {
         name: "POLYGON LOGO",
         logo: "sponsors/polygon.png",
         link: "https://polygon.technology/"
+      },
+      {
+        name:"Innobuzz",
+        logo:"sponsors/innobuzz.webp",
+        link:"https://innobuzz.in/"
+      }
+      // {
+      //   name: "rabear.io",
+      //   logo: "sponsors/rabeario.png",
+      //   link: "https://rabear.io/"
+      // },
+      // {
+      //   name: "Filecoin",
+      //   logo: "sponsors/filecoin.png",
+      //   link: "https://filecoin.io/"
+      // },
+      // {
+      //   name: "Solana",
+      //   logo: "sponsors/solana.png",
+      //   link: "https://solana.com/"
+      // },
+      // {
+      //   name: "REPLIT LOGO",
+      //   logo: "sponsors/replit-light.svg",
+      //   link: "https://replit.com/"
+      // },
+      // {
+      //   name: "Clerky",
+      //   logo: "sponsors/clerky.png",
+      //   link: "https:///"
+      // },
+      // {
+      //   name: "Taskade",
+      //   logo: "sponsors/taskade.png",
+      //   link: "https://www.taskade.com/"
+      // },
+      // {
+      //   name: "echo3D",
+      //   logo: "sponsors/echo3D.webp",
+      //   link: "https://www.echo3d.co/"
+      // },
+      // {
+      //   name: "Wolfram",
+      //   logo: "sponsors/wolfram-language.png",
+      //   link: "https://www.wolfram.com/"
+      // },
+      // {
+      //   name: "Bobble AI",
+      //   logo: "sponsors/bobbleai.png",
+      //   link: "https://www.bobble.ai/en/home"
+      // }
+    ]
+  },
+  {
+    level: "Silver",
+    data: [
+      {
+        name: "Aldrich",
+        logo: "sponsors/aldrich.png",
+        link: "https://www.shrigautamgarments.in/"
       }
     ]
   },
   {
-    level: "Partner-Sponsor",
-    data: [
+    level:"Bronze",
+    data:[
       {
-        name: "rabear.io",
-        logo: "sponsors/rabeario.png",
-        link: "https://rabear.io/"
+        name:"Sublime",
+        logo:"sponsors/sublime_text.png",
+        link:"https://www.sublimehq.com/"
       },
       {
-        name: "Filecoin",
-        logo: "sponsors/filecoin.png",
-        link: "https://filecoin.io/"
+        name:"Navan Ai",
+        logo:"sponsors/navan.svg",
+        link:"https://navan.ai/"
       },
       {
-        name: "Solana",
-        logo: "sponsors/solana.png",
-        link: "https://solana.com/"
+        name:"Sybgen",
+        logo:"sponsors/SYBGEN.png",
+        link:"https://sybgen.com/"
+      },
+      {
+        name:"1password",
+        logo:"sponsors/1password.svg",
+        link:"https://1password.com/"
+      }
+    ]
+  },
+  // {
+  //   level: "Certificate-Partner",
+  //   data: [
+  //     {
+  //       name: "Certopus",
+  //       logo: "sponsors/certopus.svg",
+  //       link: "https://certopus.com/"
+  //     }
+  //   ]
+  // },
+  
+  {
+    level:"Track-Sponsor",
+    data:[
+      {
+        name: "Verbwire",
+        logo: "sponsors/verbwire.svg",
+        link: "https://www.verbwire.com/"
       },
       {
         name: "REPLIT LOGO",
@@ -65,29 +158,29 @@ const companies: Company[] = [
         link: "https://replit.com/"
       },
       {
-        name: "Clerky",
-        logo: "sponsors/clerky.png",
-        link: "https:///"
+        name:"Atmoz",
+        logo:"sponsors/Atmoz.png",
+        link:"https://www.atmoz.in/"
+      }
+    ]
+  },
+  {
+    level:"Community-Partner",
+    data:[
+      {
+        name:"BFCET Hack",
+        logo:"sponsors/bfcet.jpg",
+        link:"https://www.bfcet.com/hack/"
       },
       {
-        name: "Taskade",
-        logo: "sponsors/taskade.png",
-        link: "https://www.taskade.com/"
+        name:"Diversion",
+        logo:"sponsors/diversion.webp",
+        link:"https://www.diversion.tech/"
       },
       {
-        name: "echo3D",
-        logo: "sponsors/echo3D.webp",
-        link: "https://www.echo3d.co/"
-      },
-      {
-        name: "Wolfram",
-        logo: "sponsors/wolfram-language.png",
-        link: "https://www.wolfram.com/"
-      },
-      {
-        name: "Bobble AI",
-        logo: "sponsors/bobbleai.png",
-        link: "https://www.bobble.ai/en/home"
+        name:"DevArmy",
+        logo:"sponsors/devarmy.png",
+        link:"https://thedevarmy.com/"
       }
     ]
   },
@@ -102,22 +195,12 @@ const companies: Company[] = [
     ]
   },
   {
-    level: "Certificate-Partner",
+    level: "Media-partner",
     data: [
       {
-        name: "Certopus",
-        logo: "sponsors/certopus.svg",
-        link: "https://certopus.com/"
-      }
-    ]
-  },
-  {
-    level: "Media-Partners",
-    data: [
-      {
-        name: "NoticeBard",
-        logo: "sponsors/noticebard.png",
-        link: "https://www.noticebard.com/"
+        name: "Youth Inc",
+        logo: "sponsors/youthinc.png",
+        link: "https://youthincmag.com/"
       }
     ]
   }
@@ -172,12 +255,20 @@ const companies: Company[] = [
       width: 25vw;
     }
     .premium-sponsor {
+      height: 18vh;
+      width: 18vw;
+    }
+    .partner-sponsor{
       height: 15vh;
       width: 15vw;
     }
-    .partner-sponsor,.sustainability-partner,.certificate-partner,.media-partners {
+    .sustainability-partner,.track-sponsor,.certificate-partner,.media-partner,.silver,.bronze{
       height: 10vh;
       width: 15vw;
+    }
+    .community-partner{
+      height: 10vh;
+      width: 10vw;
     }
     #sponsors h1 {
       font-size: 10em;
@@ -265,7 +356,7 @@ const companies: Company[] = [
         height: 5vh;
         width: 30vw;
       }
-      .sustainability-partner,.certificate-partner,.media-partners {
+      .sustainability-partner,.track-sponsor,.certificate-partner,.media-partner,.silver,.bronze,.community-partner {
         height: auto;
         width: 40vw;
       }
