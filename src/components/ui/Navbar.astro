@@ -32,12 +32,42 @@ const menuOptions = [
     link: "#timeline",
   },
 ];
+const teamOptions = [
+{
+    name: "About us",
+    link: "/#about-us",
+  },
+  {
+    name: "Themes",
+    link: "/#themes",
+  },
+  {
+    name: "FAQ",
+    link: "/#faq",
+  },
+  {
+    name: "Prizes",
+    link: "/#prizes",
+  },
+  {
+    name: "Team",
+    link: "/team",
+  },
+  {
+    name: "Timeline",
+    link: "/#timeline",
+  },
+];
 ---
-
 <header
   class="header"
   style={`background-image: url(${optimizedBackground.src});`}
+  
 >
+<!-- <header
+  class="header"
+  style={`background-image: url(${optimizedBackground.src});`}
+> -->
   <div class="container">
     <div class="logos">
       <div class="header__logo">
@@ -73,7 +103,7 @@ const menuOptions = [
     <div class="header__menu">
       <ul>
         {
-          menuOptions.map((option) => (
+          (Astro.props.team ? teamOptions : menuOptions).map((option) => (
             <li>
               <a href={option.link}>{option.name}</a>
             </li>
