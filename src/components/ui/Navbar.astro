@@ -6,22 +6,23 @@ import HackLogo from "../../assets/HackLogo.svg";
 import hamburgermenu from "../../assets/hamburgermenu.svg";
 import closeIcon from "../../assets/close.svg";
 const optimizedBackground = await getImage({ src: navbar, format: "webp" });
+
 const menuOptions = [
   {
     name: "About us",
-    link: "#about-us",
+    link: "/#about-us",
   },
   {
     name: "Themes",
-    link: "#themes",
+    link: "/#themes",
   },
   {
     name: "FAQ",
-    link: "#faq",
+    link: "/#faq",
   },
   {
     name: "Prizes",
-    link: "#prizes",
+    link: "/#prizes",
   },
   {
     name: "Team",
@@ -29,11 +30,11 @@ const menuOptions = [
   },
   {
     name: "Timeline",
-    link: "#timeline",
+    link: "/#timeline",
   },
 ];
 const teamOptions = [
-{
+  {
     name: "About us",
     link: "/#about-us",
   },
@@ -62,12 +63,7 @@ const teamOptions = [
 <header
   class="header"
   style={`background-image: url(${optimizedBackground.src});`}
-  
 >
-<!-- <header
-  class="header"
-  style={`background-image: url(${optimizedBackground.src});`}
-> -->
   <div class="container">
     <div class="logos">
       <div class="header__logo">
@@ -82,33 +78,29 @@ const teamOptions = [
       </div>
       <div id="header_menu_overlay">
         <div class="overlay_logo">
-          <a href="#">
+          <a href="/">
             <Image src={HackLogo} style={{ width: "4rem" }} alt="logo" />
           </a>
           <Image id="menu-icon" src={closeIcon} alt="logo" />
         </div>
         <div class="overlay_menu">
           <ul>
-            {
-              menuOptions.map((option) => (
-                <li>
-                  <a href={option.link}>{option.name}</a>
-                </li>
-              ))
-            }
+            {menuOptions.map((option) => (
+              <li>
+                <a href={option.link}>{option.name}</a>
+              </li>
+            ))}
           </ul>
         </div>
       </div>
     </div>
     <div class="header__menu">
       <ul>
-        {
-          (Astro.props.team ? teamOptions : menuOptions).map((option) => (
-            <li>
-              <a href={option.link}>{option.name}</a>
-            </li>
-          ))
-        }
+        {(Astro.props.team ? teamOptions : menuOptions).map((option) => (
+          <li>
+            <a href={option.link}>{option.name}</a>
+          </li>
+        ))}
       </ul>
     </div>
   </div>
