@@ -7,12 +7,12 @@ import { type TeamType } from "../pages/team.astro";
 const { data:TeamData } = Astro.props as { data: TeamType[] };
 ---
 
-<section id="judge_mentors">
+<section id="Teams">
   <p>OUR TEAM</p>
   <!-- <Graphics src="cubes" top={100} left={-15} alt="cloud" />
   <Graphics src="cube" top={50} right={-10} alt="cloud" /> -->
 
-  <div id="judges">
+  <div id="Team_Members">
     {
       TeamData.map((team) => (
         <Card
@@ -27,14 +27,14 @@ const { data:TeamData } = Astro.props as { data: TeamType[] };
 </section>
 
 <style>
-  #judge_mentors {
+  #Teams {
     position: relative;
     min-height: 50dvh;
     height: auto;
     margin: 25dvh 10dvw;
     font-family: "Overpass Mono Variable", monospace;
   }
-  #judge_mentors h1 {
+  #Teams h1 {
     font-size: 10em;
     height: 0.8em;
     font-weight: bold;
@@ -42,24 +42,24 @@ const { data:TeamData } = Astro.props as { data: TeamType[] };
     margin: 0;
     color: var(--text-background);
   }
-  #judge_mentors h1::selection {
+  #Teams h1::selection {
     background: transparent;
   }
-  #judge_mentors p {
+  #Teams p {
     color: var(--text-primary);
     font-size: 1.5em;
     margin-top: 2rem;
     margin-left: 1rem;
   }
-  #judge_mentors #who {
+  #Teams #who {
     color: var(--text-primary);
     float: right;
     margin: 0;
   }
-  #judge_mentors p::selection {
+  #Teams p::selection {
     background: transparent;
   }
-  #judges {
+  #Team_Members {
     display: grid;
     height: auto;
     width: 100%;
@@ -68,28 +68,22 @@ const { data:TeamData } = Astro.props as { data: TeamType[] };
     justify-items: center;
     grid-gap: 2rem;
   }
-  @media only screen and (max-width: 600px) {
-    #judge_mentors {
-      margin: 0 5dvw;
-    }
-    #judges {
-      grid-template-columns: repeat(1, 1fr);
-    }
-  }
   @media only screen and (max-width: 1000px) {
-    #judge_mentors {
+    #Teams {
       margin: 0 5dvw;
     }
-    #judges {
+    #Team_Members {
       grid-template-columns: repeat(2, 1fr);
     }
   }
   @media only screen and (max-width: 600px) {
-    #judge_mentors {
-      margin: 0 5dvw;
+    #Teams {
+      margin: 10vh 5dvw;
     }
-
-    #judges {
+    #Teams p {
+      display: none;
+    }
+    #Team_Members {
       grid-template-columns: repeat(1, 1fr);
     }
   }
